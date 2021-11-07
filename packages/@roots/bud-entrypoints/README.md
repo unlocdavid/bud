@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-entrypoints</strong>
 </h1>
 
 > Webpack tools
+
 ## Installation
 
 Install **@roots/bud-entrypoints** to your project.

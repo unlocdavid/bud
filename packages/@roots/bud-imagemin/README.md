@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-imagemin</strong>
 </h1>
 
 > Image minification for `@roots/bud` projects
+
 ## Installation
 
 Install **@roots/bud-imagemin** to your project.

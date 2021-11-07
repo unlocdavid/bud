@@ -6,9 +6,6 @@
   },
   "references": [
     {
-      "path": "./../ink-use-style/tsconfig-esm.json"
-    },
-    {
       "path": "./../container/tsconfig-esm.json"
     }
   ]

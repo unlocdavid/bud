@@ -33,7 +33,7 @@ describe.skip('Extensions', function () {
   }
 
   beforeAll(async () => {
-    bud = await factory({config: {ci: true, log: false}})
+    bud = await factory({ci: true, log: false})
   })
 
   it('is constructable', () => {

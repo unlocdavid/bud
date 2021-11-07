@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-support</strong>
 </h1>
 
 > 👨🏽‍🍳 Internal packages for @roots/bud
+
 ## Installation
 
 Install **@roots/bud-support** to your project.

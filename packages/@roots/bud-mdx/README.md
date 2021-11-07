@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-mdx</strong>
 </h1>
 
 > mdx extension for @roots/bud projects
+
 ## Installation
 
 Install **@roots/bud-mdx** to your project.

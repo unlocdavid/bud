@@ -13,26 +13,30 @@ const task = async (cmd, paths) => {
 
   await Promise.all(
     paths.map(async ex => {
-      const task = execa.command(`yarn bud ${cmd}`, {
-        cwd: ex.cwd,
-      })
-
-      task
-        .then(() => console.log(chalk.green`${ex.name}`))
-        .catch(async err => {
-          await fs.writeFile(
-            ex.cwd.concat(`/err.${cmd}.log`),
-            err.stdout,
-          )
-          console.log(chalk.red`${ex.name}`)
-        })
-        .finally(() => {
-          const killed = task.kill()
-          killed &&
-            console.log(`${ex.name} yarn bud ${cmd} killed`)
+      try {
+        const task = execa.command(`yarn bud ${cmd}`, {
+          cwd: ex.cwd,
         })
 
-      await task
+        task
+          .then(() => console.log(chalk.green`${ex.name}`))
+          .catch(async err => {
+            await fs.writeFile(
+              ex.cwd.concat(`/err.${cmd}.log`),
+              err.stdout,
+            )
+            console.log(chalk.red`${ex.name}`)
+          })
+          .finally(() => {
+            const killed = task.kill()
+            killed &&
+              console.log(`${ex.name} yarn bud ${cmd} killed`)
+          })
+
+        await task
+      } catch (err) {
+        console.error(err)
+      }
     }),
   )
 }

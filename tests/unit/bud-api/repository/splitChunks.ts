@@ -4,7 +4,7 @@ describe.skip('bud.splitChunks', function () {
   let bud: Framework
 
   beforeAll(async () => {
-    bud = await factory({config: {ci: true, log: false}})
+    bud = await factory({ci: true, log: false})
   })
 
   beforeEach(() => {

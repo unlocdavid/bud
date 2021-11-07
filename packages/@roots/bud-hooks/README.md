@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-hooks</strong>
 </h1>
 
 > Hooks controller for Bud
+
 ## Installation
 
 Install **@roots/bud-hooks** to your project.

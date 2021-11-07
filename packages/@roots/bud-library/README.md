@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-library</strong>
 </h1>
 
 > Adds dynamic link library support to Bud
+
 ## Installation
 
 Install **@roots/bud-library** to your project.

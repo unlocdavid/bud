@@ -1,4 +1,3 @@
-import type {Configuration} from '@roots/bud-framework'
 import {cpus} from 'os'
 
 /**
@@ -6,7 +5,7 @@ import {cpus} from 'os'
  *
  * @public @config
  */
-export const config: Configuration = {
+export const SettingsService = {
   /**
    * {@inheritDoc @roots/bud-framework#Configuration.name}
    * @public
@@ -24,7 +23,7 @@ export const config: Configuration = {
    * {@inheritDoc @roots/bud-framework#Configuration.ci}
    * @public
    */
-  ci: true,
+  ci: false,
 
   /**
    * {@inheritDoc @roots/bud-framework#Configuration.clean}
@@ -87,6 +86,11 @@ export const config: Configuration = {
    * @public
    */
   hashFormat: '[name].[contenthash:6]',
+
+  /**
+   * @public
+   */
+  mode: 'production',
 
   /**
    * @public

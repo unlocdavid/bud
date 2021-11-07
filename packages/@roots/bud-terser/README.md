@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-terser</strong>
 </h1>
 
 > Adds terser support to Bud
+
 ## Installation
 
 Install **@roots/bud-terser** to your project.

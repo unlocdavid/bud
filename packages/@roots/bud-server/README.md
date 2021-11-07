@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-server</strong>
 </h1>
 
 > Development server for @roots/bud
+
 ## Installation
 
 Install **@roots/bud-server** to your project.

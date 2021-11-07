@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-postcss</strong>
 </h1>
 
 > Adds postcss support to @roots/bud projects
+
 ## Installation
 
 Install **@roots/bud-postcss** to your project.

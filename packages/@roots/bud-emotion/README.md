@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-emotion</strong>
 </h1>
 
 > CSS-in-JS support for the @roots/bud framework
+
 ## Installation
 
 Install **@roots/bud-emotion** to your project.

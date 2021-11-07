@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-api</strong>
 </h1>
 
 > Bud configuration API
+
 ## Installation
 
 Install **@roots/bud-api** to your project.

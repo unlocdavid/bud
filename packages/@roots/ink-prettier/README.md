@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/ink-prettier</strong>
 </h1>
 
 > Prettier component for React Ink
+
 ## Installation
 
 Install **@roots/ink-prettier** to your project.

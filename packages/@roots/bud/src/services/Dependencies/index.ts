@@ -1,7 +1,7 @@
 import {Service} from '@roots/bud-framework'
+import execa from 'execa'
 
 import {
-  $,
   bind,
   DependenciesManager,
 } from './dependencies.dependencies'
@@ -65,12 +65,12 @@ export class Dependencies extends Service<null> {
    * @decorator `@bind`
    */
   @bind
-  public install(
+  public async install(
     dependencies: {
       name: string
       version: string
     }[],
-  ): void {
+  ): Promise<void> {
     const installStr = dependencies.reduce(
       (acc, dependency) =>
         `${acc} ${dependency.name}@${dependency.version}`,
@@ -78,7 +78,7 @@ export class Dependencies extends Service<null> {
     )
 
     this.manager.isYarn()
-      ? $(`yarn add ${installStr} --dev`)
-      : $(`npm install ${installStr} --save-dev`)
+      ? execa(`yarn add ${installStr} --dev`)
+      : execa(`npm install ${installStr} --save-dev`)
   }
 }

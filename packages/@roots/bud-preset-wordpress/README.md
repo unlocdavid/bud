@@ -26,6 +26,7 @@
 </h1>
 
 > Recommended preset for Bud projects
+
 ## Installation
 
 Install **@roots/bud-preset-recommend** to your project.

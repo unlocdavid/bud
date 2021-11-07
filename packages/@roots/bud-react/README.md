@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-react</strong>
 </h1>
 
 > React support for @roots/bud projects.
+
 ## Installation
 
 Install **@roots/bud-react** to your project.

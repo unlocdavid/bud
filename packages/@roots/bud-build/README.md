@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-build</strong>
 </h1>
 
 > Bud webpack config build controller
+
 ## Installation
 
 Install **@roots/bud-build** to your project.

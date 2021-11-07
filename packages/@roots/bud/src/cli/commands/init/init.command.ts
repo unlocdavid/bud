@@ -1,8 +1,10 @@
-import execa from 'execa'
+import {container, Execa} from '@roots/bud-support'
 
-import type {Bud} from '../../Bud'
-import {Command} from '../Command'
-import {Runner} from '../Runner'
+import type {Bud} from '../../../Bud'
+import {Command} from '../../Command'
+import {Runner} from '../../Runner'
+
+const $ = container.resolve<typeof Execa>('execa')
 
 export default class Init extends Command {
   public static id = 'init'
@@ -23,9 +25,7 @@ export default class Init extends Command {
   }
 
   public async run() {
-    const runner = new Runner(this.parse(Init), {
-      config: {ci: true},
-    })
+    const runner = new Runner(this.parse(Init), {ci: true})
     await runner.initialize()
 
     this.app = runner.app
@@ -49,7 +49,7 @@ export default class Init extends Command {
 
     this.app.info(cmd)
 
-    const task = execa.command(cmd)
+    const task = $.command(cmd)
     task.stdout.pipe(process.stdout)
     task.stderr.pipe(process.stderr)
     await task.finally()

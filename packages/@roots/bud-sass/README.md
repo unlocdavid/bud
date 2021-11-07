@@ -29,6 +29,7 @@
 </h1>
 
 > Sass support for @roots/bud projects.
+
 ## Installation
 
 Install **@roots/bud-sass** to your project.

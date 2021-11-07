@@ -1,7 +1,6 @@
 export {bind} from '@roots/bud-support'
 
-import {fs} from '@roots/bud-support'
-export const {readFile, readJson, writeFile, remove} = fs
+export {readFile, readJson, writeFile, remove} from 'fs-extra'
 
 import globby from 'globby'
 export {globby}

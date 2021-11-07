@@ -102,7 +102,10 @@ export const config = async (app, flags) => {
    *
    * @example `$ bud build --target plugin`
    */
-  if (flags.target.length > 0) {
+  if (
+    flags.target.length > 0 &&
+    app.children?.getEntries().length > 0
+  ) {
     /**
      * Handle parent if applicable
      */
@@ -112,7 +115,7 @@ export const config = async (app, flags) => {
     /**
      * And children if applicable
      */
-    app.children.getKeys().forEach(name => {
+    app.children?.getKeys().forEach(name => {
       !flags?.target?.includes(name) && app.children.remove(name)
     })
   }

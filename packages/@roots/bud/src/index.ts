@@ -52,9 +52,11 @@
 
 import './interface'
 
-export {Bud} from './Bud'
+export * from './services'
 
-export {config} from './config'
+export * from './settings'
+
+export * from './Bud'
 
 export {factory} from './factory'
 

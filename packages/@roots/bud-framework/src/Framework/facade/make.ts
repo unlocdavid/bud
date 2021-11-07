@@ -1,3 +1,5 @@
+import {container} from '@roots/bud-support'
+
 import {Framework} from '..'
 
 /**
@@ -50,13 +52,10 @@ export async function make(
   handleChildNestingError.bind(ctx)()
   ctx.logger.instance.fav(`new instance:`, name)
 
-  const instance = new ctx.implementation({
-    name,
-    childOf: this,
-    config: ctx.options.config,
-    mode: ctx.options.mode,
-    services: ctx.options.services,
-  })
+  const instance = container.resolve<Framework>('bud')
+  instance.name = name
+  instance.root = ctx
+  instance.mode = ctx.mode
 
   await instance.lifecycle()
 

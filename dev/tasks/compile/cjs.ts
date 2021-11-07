@@ -1,6 +1,6 @@
 import ncc from '@vercel/ncc'
 import {emptydir, ensureDir, outputFile, remove} from 'fs-extra'
-import path from 'path'
+import {join} from 'path'
 
 import {nccOptions} from './options'
 
@@ -10,7 +10,7 @@ const build = async (pkg: `@roots/${string}`): Promise<void> => {
    */
   try {
     await ensureDir(
-      path.join(process.cwd(), `/packages/${pkg}/lib/cjs/`),
+      join(process.cwd(), `/packages/${pkg}/lib/cjs/`),
     )
   } catch (err) {}
 
@@ -19,7 +19,7 @@ const build = async (pkg: `@roots/${string}`): Promise<void> => {
    */
   try {
     await emptydir(
-      path.join(process.cwd(), `/packages/${pkg}/lib/cjs/`),
+      join(process.cwd(), `/packages/${pkg}/lib/cjs/`),
     )
   } catch (err) {}
 
@@ -28,7 +28,7 @@ const build = async (pkg: `@roots/${string}`): Promise<void> => {
    */
   try {
     await remove(
-      path.join(
+      join(
         process.cwd(),
         `/packages/${pkg}/lib/tsconfig.tsbuildinfo`,
       ),
@@ -39,7 +39,7 @@ const build = async (pkg: `@roots/${string}`): Promise<void> => {
    * Compile source
    */
   let {code} = await ncc(
-    path.join(process.cwd(), `/packages/${pkg}/src/index.ts`),
+    `${process.cwd()}/packages/${pkg}/src/index.ts`,
     nccOptions,
   )
 
@@ -53,10 +53,7 @@ const build = async (pkg: `@roots/${string}`): Promise<void> => {
    * Write entrypoint
    */
   await outputFile(
-    path.join(
-      process.cwd(),
-      `/packages/${pkg}/lib/cjs/index.js`,
-    ),
+    `${process.cwd()}/packages/${pkg}/lib/cjs/index.js`,
     code,
     'utf8',
   )

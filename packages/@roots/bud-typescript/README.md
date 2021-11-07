@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-typescript</strong>
 </h1>
 
 > Adds Typescript support to Bud.
+
 ## Installation
 
 Install **@roots/bud-typescript** to your project.

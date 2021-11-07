@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-compiler</strong>
 </h1>
 
 > Compilation handler
+
 ## Installation
 
 Install **@roots/bud-compiler** to your project.

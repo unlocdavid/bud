@@ -31,7 +31,14 @@
 
 import 'reflect-metadata'
 
-import {container} from 'tsyringe'
+import {
+  container,
+  inject,
+  injectable,
+  scoped,
+  singleton,
+  Lifecycle,
+} from 'tsyringe'
 
 /**
  * `@bind`
@@ -48,9 +55,17 @@ container.register('decorators', {
  */
 import lodash, {LoDashStatic} from 'lodash'
 container.register<LoDashStatic>('lodash', {useValue: lodash})
-export {LoDashStatic}
+export {LoDashStatic, lodash}
+
+/**
+ * Execa
+ */
+import execa from 'execa'
+container.register<typeof execa>('execa', {useValue: execa})
+export {execa as Execa}
 
 export {container}
+export {inject, injectable, scoped, singleton, Lifecycle}
 
 /**
  * Dependencies
@@ -70,7 +85,6 @@ export * as globby from './external/globby'
 export {humanReadable} from './external/human-readable'
 export {IgnoreEmitWebpackPlugin} from './external/ignore-emit-webpack-plugin'
 export {json5} from './external/json5'
-export {lodash} from './external/lodash'
 export {nanoid} from './external/nanoid'
 export {NodeNotifier} from './external/node-notifier'
 export {patchConsole} from './external/patch-console'

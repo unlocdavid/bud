@@ -5,12 +5,27 @@ import {Registry} from './babel.config.interface'
 
 @injectable()
 export class BudBabelConfig {
+  /**
+   * @public
+   */
   public plugins: Registry = {}
 
+  /**
+   * @public
+   */
   public presets: Registry = {}
 
+  /**
+   * Class constructor
+   *
+   * @public
+   */
   public constructor() {}
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public setPreset(
     name: string,
@@ -25,6 +40,10 @@ export class BudBabelConfig {
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public setPresets(presets: {
     [key: string]: [string, any] | string
@@ -45,12 +64,20 @@ export class BudBabelConfig {
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public unsetPreset(preset: string) {
     this.presets[preset] && delete this.presets[preset]
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public setPresetOptions(preset: string, options: any): this {
     this.presets[preset] = [
@@ -61,6 +88,10 @@ export class BudBabelConfig {
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public setPlugin(
     name: string,
@@ -75,6 +106,10 @@ export class BudBabelConfig {
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public setPlugins(plugins: {
     [key: string]: [any, any] | string
@@ -95,12 +130,20 @@ export class BudBabelConfig {
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public unsetPlugin(plugin: string) {
     this.plugins[plugin] && delete this.plugins[plugin]
     return this
   }
 
+  /**
+   * @public
+   * @decorator `@bind`
+   */
   @bind
   public setPluginOptions(plugin: string, options: any): this {
     this.plugins[plugin] = [

@@ -1,4 +1,4 @@
-import {config, factory, Framework} from '@roots/bud'
+import {factory, Framework} from '@roots/bud'
 import {Peers} from '@roots/bud/src/services/Project/peers/peers.service'
 import {readJson} from 'fs-extra'
 
@@ -11,13 +11,9 @@ describe('bud.project', function () {
     json = await readJson(project.concat('/package.json'))
 
     bud = await factory({
-      config: {
-        ...config,
-        ci: true,
-        location: {
-          ...config.location,
-          project,
-        },
+      ci: true,
+      location: {
+        project,
       },
     })
   })

@@ -4,7 +4,7 @@ describe('@roots/bud-compiler', function () {
   let bud: Framework
 
   beforeAll(async () => {
-    bud = await factory({config: {ci: true, log: false}})
+    bud = await factory({ci: true, log: false})
   })
 
   it('is not compiled initially', () => {

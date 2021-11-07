@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-criticalcss</strong>
 </h1>
 
 > Adds critical.css support to Bud
+
 ## Installation
 
 Install **@roots/bud-criticalcss** to your project.

@@ -1,5 +1,4 @@
 import {Bud} from '../../Bud'
-import {config} from '../../config'
 import {remove} from '../cli.dependencies'
 import {Command} from '../Command'
 import {Runner} from '../Runner'
@@ -14,9 +13,7 @@ export default class Clean extends Command {
   public app: Bud
 
   public async run() {
-    const runner = new Runner(this.parse(Clean), {
-      config,
-    })
+    const runner = new Runner(this.parse(Clean))
     await runner.initialize()
     this.app = runner.app
 

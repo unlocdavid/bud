@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-eslint</strong>
 </h1>
 
 > Adds eslint support to Bud
+
 ## Installation
 
 Install **@roots/bud-eslint** to your project.

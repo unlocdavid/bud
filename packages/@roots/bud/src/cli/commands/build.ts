@@ -1,3 +1,5 @@
+import '../../'
+
 import {flags} from '@oclif/command'
 
 import {Bud} from '../../Bud'

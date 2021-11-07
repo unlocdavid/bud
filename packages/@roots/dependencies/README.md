@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/dependencies</strong>
 </h1>
 
 > Automated package installation
+
 ## Installation
 
 Install **@roots/dependencies** to your project.

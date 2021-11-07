@@ -1,4 +1,5 @@
 import {Container} from '@roots/container'
+import {Service} from 'src/Service'
 
 import {
   Api,
@@ -11,7 +12,6 @@ import {
   Hooks,
   Mode,
   Server,
-  Services,
   Store,
 } from '../'
 import * as Cache from '../Cache'
@@ -32,7 +32,7 @@ import {setPath} from './facade/setPath'
 import {tap} from './facade/tap'
 import {when} from './facade/when'
 import {bind, format, highlight} from './framework.dependencies'
-import {Constructor, Options} from './framework.interface'
+import {Constructor} from './framework.interface'
 import {lifecycle} from './lifecycle'
 
 /**
@@ -78,7 +78,7 @@ export class Framework {
    *
    * @defaultValue null
    */
-  public root: Framework | null = null
+  public root: Framework = this
   public get parent(): Framework {
     return this.root
   }
@@ -114,16 +114,6 @@ export class Framework {
   public get hasChildren(): boolean {
     return this.children?.getEntries().length > 0
   }
-
-  /**
-   * Framework services
-   *
-   * @remarks
-   * Can be set directly on the child instance or passed as a property in the {@link Options}.
-   *
-   * @public
-   */
-  public services: Services
 
   /**
    * Macros for assisting with common config tasks
@@ -264,39 +254,23 @@ export class Framework {
   }
 
   /**
-   * @public
-   */
-  public options: Options
-
-  /**
    * Class constructor
    *
-   * @param options - {@link Framework.Options | Framework constructor options}
+   * @param settings - Framework configuration
    *
    * @public
    */
-  public constructor(options: Options) {
-    this.options = options
-
-    if (typeof options == 'undefined') {
-      throw Error(`instance name is required`)
-    }
-
-    if (!options.childOf) {
-      // Parent & child instance exclusive settings
-      this.children = new Container()
-      this.root = this
-    } else {
-      this.root = options.childOf
-    }
-
-    // Assign to instance
-    this.name = options.name
-    this.mode = options.mode
-    this.services = options.services
-
+  public constructor(
+    public services: Container<Service>,
+    public settings: Configuration,
+  ) {
     this.store = new Store<Configuration>(this)
-    this.store.setStore(options.config)
+    this.store.setStore(settings)
+
+    this.mode = settings.mode
+
+    this.root = this
+    this.children = new Container()
 
     this.access = facade.access.bind(this)
     this.bindMethod = bindMethod.bind(this)

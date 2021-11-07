@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-preset-recommend</strong>
 </h1>
 
 > Recommended preset for Bud projects
+
 ## Installation
 
 Install **@roots/bud-preset-recommend** to your project.

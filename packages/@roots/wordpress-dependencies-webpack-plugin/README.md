@@ -25,7 +25,8 @@
   <strong>@roots/wordpress-dependencies-webpack-plugin</strong>
 </h1>
 
-> 
+>
+
 ## Installation
 
 Install **@roots/wordpress-dependencies-webpack-plugin** to your project.

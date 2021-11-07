@@ -1,2 +1,2 @@
-import fs from 'fs-extra'
+import * as fs from 'fs-extra'
 export {fs}

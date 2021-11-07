@@ -1,5 +1,5 @@
-import {fs} from '@roots/bud-support'
-export const {readJsonSync} = fs
+export {readJsonSync} from 'fs-extra'
 
-import {lodash} from '@roots/bud-support'
-export const {isEqual} = lodash
+import {container, LoDashStatic} from '@roots/bud-support'
+export const {isEqual} =
+  container.resolve<LoDashStatic>('lodash')

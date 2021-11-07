@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud</strong>
 </h1>
 
 > A frontend build tooling framework combining the best parts of Symfony Encore and Laravel Mix
+
 ## Installation
 
 Install **@roots/bud** to your project.

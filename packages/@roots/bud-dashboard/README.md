@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-dashboard</strong>
 </h1>
 
 > Bud CLI dashboard
+
 ## Installation
 
 Install **@roots/bud-dashboard** to your project.

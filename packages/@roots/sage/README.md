@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/sage</strong>
 </h1>
 
 > @roots/sage preset for @roots/bud
+
 ## Installation
 
 Install **@roots/sage** to your project.

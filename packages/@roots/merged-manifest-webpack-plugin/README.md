@@ -25,7 +25,8 @@
   <strong>@roots/merged-manifest-webpack-plugin</strong>
 </h1>
 
-> 
+>
+
 ## Installation
 
 Install **@roots/merged-manifest-webpack-plugin** to your project.

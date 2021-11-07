@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-framework</strong>
 </h1>
 
 > A friendly build tool to help manage your project assets.
+
 ## Installation
 
 Install **@roots/bud-framework** to your project.

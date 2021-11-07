@@ -25,7 +25,8 @@
   <strong>@roots/wordpress-externals-webpack-plugin</strong>
 </h1>
 
-> 
+>
+
 ## Installation
 
 Install **@roots/wordpress-externals-webpack-plugin** to your project.

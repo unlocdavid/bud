@@ -36,7 +36,7 @@ export class Peers implements Model.Interface {
   @bind
   public async getManifestPath(name: string) {
     try {
-      const packagePath = await pkgUp.default({
+      const packagePath = await pkgUp({
         cwd: dirname(safeResolve(name)),
       })
 

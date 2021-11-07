@@ -1,30 +1,22 @@
-import {Extension, Mode, Services} from '../'
+import {Container} from '@roots/container'
+
+import {Extension, Mode} from '../'
 import {Configuration} from '../Configuration'
+import {Service} from '../Service'
 import {Framework} from './framework.service'
 
 /**
  * Framework Constructor
  */
-export type Constructor = new (options: Options) => Framework
+export type Constructor = new (
+  services: Container<Service>,
+  settings: Configuration,
+) => Framework
 
 /*
  * Constructor options
  */
 export interface Options {
-  /**
-   * Application name
-   *
-   * @remarks
-   * In the context of the parent compiler this options is used
-   * for many things, including determining where to look for configuration
-   * files and fundamental, related conventions.
-   *
-   * @defaultValue 'bud'
-   *
-   * @internal
-   */
-  name: string
-
   /**
    * The mode to run the application in. Either `production` or `development`.
    *
@@ -44,12 +36,6 @@ export interface Options {
    * @public
    */
   config?: Partial<Configuration>
-
-  /**
-   * Framework services
-   * @public
-   */
-  services?: Services
 
   /**
    * @internal

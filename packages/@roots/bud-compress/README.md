@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-compress</strong>
 </h1>
 
 > Adds gzip and brotli compression to Bud
+
 ## Installation
 
 Install **@roots/bud-compress** to your project.

@@ -2,9 +2,9 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "declarationDir": "./types",
-    "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "baseUrl": ".",
     "rootDir": "./src",
     "outDir": "./lib/cjs",
     "types": [
@@ -20,9 +20,6 @@
     "node_modules"
   ],
   "references": [
-    {
-      "path": "./../ink-use-style/tsconfig.json"
-    },
     {
       "path": "./../container/tsconfig.json"
     }

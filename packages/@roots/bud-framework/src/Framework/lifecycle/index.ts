@@ -42,8 +42,9 @@ export async function lifecycle(
   /**
    * Get bindable services
    */
-  const validServices = Object.entries(this.services).filter(
-    ([name]): boolean => {
+  const validServices = this.services
+    .getEntries()
+    .filter(([name]): boolean => {
       /**
        * - No reason to start server for production
        * - No reason to boot expensive parent services for child compilation instantances
@@ -53,23 +54,17 @@ export async function lifecycle(
         (!this.isRoot && PARENT_SERVICES.includes(name))
         ? false
         : true
-    },
-  )
+    })
 
   /**
    * Initialize services
    */
   const initializedServices = validServices
     .filter(([name]) => isUndefined(this[name]))
-    .map(
-      ([name, Service]: [
-        string,
-        new (app: Framework) => Service,
-      ]) => {
-        this[name] = new Service(this)
-        return this[name]
-      },
-    )
+    .map(([name, Service]) => {
+      this[name] = new Service(this)
+      return this[name]
+    })
 
   /**
    * Service lifecycle

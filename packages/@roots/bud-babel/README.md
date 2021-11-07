@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-babel</strong>
 </h1>
 
 > Adds babel support to @roots/bud
+
 ## Installation
 
 Install **@roots/bud-babel** to your project.

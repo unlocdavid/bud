@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/entrypoints-webpack-plugin</strong>
 </h1>
 
 > Manifest with assets grouped by entrypoint
+
 ## Installation
 
 Install **@roots/entrypoints-webpack-plugin** to your project.

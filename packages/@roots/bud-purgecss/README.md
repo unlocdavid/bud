@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-purgecss</strong>
 </h1>
 
 > Adds purgecss support to Bud
+
 ## Installation
 
 Install **@roots/bud-purgecss** to your project.

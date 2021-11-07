@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-esbuild</strong>
 </h1>
 
 > ESBuild transpilation extension for Bud projects
+
 ## Installation
 
 Install **@roots/bud-esbuild** to your project.

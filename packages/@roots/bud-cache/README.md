@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-cache</strong>
 </h1>
 
 > Config caching
+
 ## Installation
 
 Install **@roots/bud-cache** to your project.

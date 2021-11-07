@@ -1,6 +1,6 @@
 import Webpack from 'webpack'
 
-import {Index, Locations, Server} from '.'
+import {Framework, Index, Locations, Server} from '.'
 
 interface CompilerConfig extends Partial<Webpack.Configuration> {
   optimization?: any
@@ -17,13 +17,6 @@ interface CompilerConfig extends Partial<Webpack.Configuration> {
  * @public
  */
 export interface Configuration {
-  /**
-   * Application name
-   *
-   * @public
-   */
-  name: string
-
   /**
    * Shared regular expressions for pattern matching.
    *
@@ -156,6 +149,21 @@ export interface Configuration {
    * @public
    */
   hashFormat: string
+
+  /**
+   * Reference to parent framework instance
+   * if one is set
+   *
+   * @public
+   */
+  childOf?: Framework
+
+  /**
+   * Target mode
+   *
+   * @public
+   */
+  mode?: 'development' | 'production'
 
   /**
    * @public

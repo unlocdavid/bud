@@ -1,8 +1,6 @@
-import {fs} from '@roots/bud-support'
-export const {remove} = fs
+export {remove} from 'fs-extra'
 
 import {NodeNotifier} from '@roots/bud-support'
 export {NodeNotifier}
 
-import {lodash} from '@roots/bud-support'
-export const {isFunction} = lodash
+export {isFunction} from 'lodash'

@@ -2,7 +2,6 @@ import {Configuration} from '@roots/bud-framework'
 import {bind} from '@roots/bud-support'
 
 import {Bud} from '../../Bud'
-import {config} from '../../config'
 import {factory} from '../../factory'
 import * as dynamic from './dynamic.config'
 import * as flags from './flags.config'
@@ -25,12 +24,8 @@ export class Runner {
    */
   public constructor(
     public cli: Configuration['cli'],
-    public options: {
-      mode?: 'production' | 'development'
-      config?: Partial<typeof config>
-    } = {
+    public options: Partial<Configuration> = {
       mode: 'production',
-      config: {},
     },
   ) {}
 
@@ -44,16 +39,11 @@ export class Runner {
   public async initialize() {
     this.app = await factory({
       mode: this.options.mode,
-      ...this.options,
-      config: {
-        ...config,
-        ci: this.cli?.flags?.ci,
-        cache: this.cli?.flags?.cache,
-        clean: this.cli?.flags?.clean,
-        inject: this.cli?.flags?.inject,
-        cli: this.cli,
-        ...(this.options?.config ?? {}),
-      },
+      ci: this.cli?.flags?.ci,
+      cache: this.cli?.flags?.cache,
+      clean: this.cli?.flags?.clean,
+      inject: this.cli?.flags?.inject,
+      cli: this.cli,
     })
 
     return this.app

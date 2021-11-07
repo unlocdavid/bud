@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-wordpress-dependencies</strong>
 </h1>
 
 > Webpack tools
+
 ## Installation
 
 Install **@roots/bud-wordpress-dependencies** to your project.

@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-vue</strong>
 </h1>
 
 > Adds @vue/vue support to @roots/bud projects
+
 ## Installation
 
 Install **@roots/bud-vue** to your project.

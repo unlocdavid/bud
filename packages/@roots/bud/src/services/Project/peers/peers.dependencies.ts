@@ -1,7 +1,5 @@
-import {chalk, fs} from '@roots/bud-support'
-
-export const {readJson} = fs
-export const {green, yellow, red} = chalk
+export {green, yellow, red} from 'chalk'
+export {readJson} from 'fs-extra'
 
 export {
   bind,

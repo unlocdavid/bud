@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-prettier</strong>
 </h1>
 
 > Adds prettier support to Bud
+
 ## Installation
 
 Install **@roots/bud-prettier** to your project.

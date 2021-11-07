@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-stylelint</strong>
 </h1>
 
 > Adds stylelint support to Bud
+
 ## Installation
 
 Install **@roots/bud-stylelint** to your project.
