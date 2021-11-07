@@ -63,20 +63,15 @@
     "pkg:format": "yarn g:pkg:format"
   },
   "devDependencies": {
-    "@roots/container": "workspace:packages/@roots/container",
-    "@types/jest": "27.0.2",
     "@types/lodash": "4.14.176",
     "@types/node": "16.11.4",
-    "jest": "27.3.1"
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "@roots/bud-framework": "workspace:packages/@roots/bud-framework",
-    "autobind-decorator": "^2.4.0",
-    "lodash": "^4.17.21",
-    "pretty-format": "^27.3.1",
-    "reflect-metadata": "^0.1.13",
-    "tslib": "^2.3.1",
-    "tsyringe": "^4.6.0"
+    "@roots/container": "workspace:packages/@roots/container",
+    "helpful-decorators": "^2.1.0",
+    "lodash": "^4.17.21"
   },
   "stableVersion": "4.6.0"
 }

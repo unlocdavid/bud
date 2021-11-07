@@ -68,7 +68,8 @@
     "@types/node": "16.11.4",
     "@types/prettier": "2.4.1",
     "@types/react": "17.0.32",
-    "jest": "27.3.1"
+    "jest": "27.3.1",
+    "typescript": "^4.4.4"
   },
   "peerDependencies": {
     "ink": "^3.0.9",

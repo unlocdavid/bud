@@ -1,7 +1,7 @@
 import * as Framework from '@roots/bud-framework'
-import {container} from '@roots/bud-support'
+import {container} from 'tsyringe'
 
-import {Controller} from '../Controller'
+import * as Controller from '../Controller'
 import {bind} from './extensions.dependencies'
 
 /**
@@ -28,7 +28,10 @@ export class Extensions
     extension:
       | Framework.Extension.Module
       | Promise<Framework.Extension.Module>,
-  ): Controller {
+  ): Controller.Service {
+    const Controller = container.resolve<Controller.Constructor>(
+      'extension.controller',
+    )
     const controller = new Controller(this.app, extension)
 
     return controller
@@ -67,36 +70,22 @@ export class Extensions
     this.log('time', 'injecting project extensions')
     await Promise.all(
       this.app.project.getKeys('extensions').map(async pkg => {
-        const importedModule = await import(pkg)
+        /**
+         * This import needs to happen regardless of
+         * if we pass the package exports or the container
+         * module to the controller. The extension has not been
+         * run yet.
+         */
+        const importResult = await import(pkg)
 
-        this.app.dump(importedModule.Extension)
+        const extension = container.isRegistered(pkg)
+          ? container.resolve(pkg)
+          : importResult
 
-        let importResult = container.resolve(
-          importedModule.Extension,
-        ) as any
-
-        this.app.dump(importResult)
-
-        this.log('success', `${importResult.name} resolved`)
-        const tuples = Object.entries(importResult)
-
-        tuples.forEach(([key, value], i) => {
-          this.log(
-            'info',
-            `[${i + 1}/${tuples.length}]`,
-            `${key}`,
-            value,
-          )
-        })
-
-        const controller = await this.makeController(
-          importResult,
-        )
-
-        this.set(controller.name, controller)
+        this.log('success', `${extension.name} resolved`)
+        this.set(extension.name, this.makeController(extension))
       }),
     )
-
     this.log('timeEnd', 'injecting project extensions')
   }
 
@@ -109,7 +98,7 @@ export class Extensions
   @bind
   public async registerExtension(key: string): Promise<void> {
     try {
-      const controller = this.get<Controller>(key)
+      const controller = this.get<Controller.Service>(key)
       await controller.register()
 
       this.log('success', `${key} registered`)
@@ -121,7 +110,7 @@ export class Extensions
   @bind
   public async bootExtension(key: string): Promise<void> {
     try {
-      const controller = this.get<Controller>(key)
+      const controller = this.get<Controller.Service>(key)
       await controller.boot()
       this.log('success', `${key} booted`)
     } catch (err) {
@@ -168,11 +157,11 @@ export class Extensions
     }
 
     const controller = await this.makeController(extension)
-    this.log('await', '[1/3]', controller.name, 'instantiated')
+    this.log('await', controller.name, 'instantiated')
     await controller.register()
-    this.log('await', '[2/3]', controller.name, 'registered')
+    this.log('await', controller.name, 'registered')
     await controller.boot()
-    this.log('await', '[3/3]', controller.name, 'booted')
+    this.log('await', controller.name, 'booted')
 
     this.set(controller.name, controller)
 
@@ -200,7 +189,7 @@ export class Extensions
     this.log('time', 'extensions.make')
 
     const plugins = this.getValues()
-      .map((controller: Controller) => {
+      .map((controller: Controller.Service) => {
         return controller.make()
       })
       .filter(Boolean)

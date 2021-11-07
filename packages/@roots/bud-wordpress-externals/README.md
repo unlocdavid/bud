@@ -24,12 +24,12 @@
   </a>
 </p>
 
-
 <h1 align="center">
   <strong>@roots/bud-wordpress-externals</strong>
 </h1>
 
 > Webpack tools
+
 ## Installation
 
 Install **@roots/bud-wordpress-externals** to your project.

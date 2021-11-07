@@ -8,12 +8,16 @@
     "rootDir": "./src",
     "outDir": "./lib/cjs",
     "types": [
-      "node",
-      "@roots/bud-api"
+      "node"
     ]
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "lib",
+    "types",
+    "node_modules"
   ],
   "references": [
     {

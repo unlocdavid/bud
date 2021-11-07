@@ -13,5 +13,6 @@
  * @core @packageDocumentation @betaDocumentation
  */
 
-export {Controller} from './Controller'
+import 'reflect-metadata'
+
 export {Extensions} from './Extensions'

@@ -2403,6 +2403,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2428,6 +2429,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2462,6 +2464,7 @@ __metadata:
     svgo: ^2.7.0
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     url-loader: ^4.1.1
     webpack: 5.59.1
     xml-loader: ^1.2.1
@@ -2477,6 +2480,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -2491,6 +2495,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2510,6 +2515,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2527,6 +2533,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -2547,6 +2554,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2571,6 +2579,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     "@emotion/css": 11.5.0
     "@emotion/react": 11.5.0
@@ -2593,6 +2602,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -2615,6 +2625,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2637,6 +2648,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     eslint: 7.32.0
@@ -2658,6 +2670,8 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    type-fest: ^2.5.2
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2679,6 +2693,7 @@ __metadata:
     signale: ^1.4.0
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2689,16 +2704,11 @@ __metadata:
   dependencies:
     "@roots/bud-framework": "workspace:packages/@roots/bud-framework"
     "@roots/container": "workspace:packages/@roots/container"
-    "@types/jest": 27.0.2
     "@types/lodash": 4.14.176
     "@types/node": 16.11.4
-    autobind-decorator: ^2.4.0
-    jest: 27.3.1
+    helpful-decorators: ^2.1.0
     lodash: ^4.17.21
-    pretty-format: ^27.3.1
-    reflect-metadata: ^0.1.13
-    tslib: ^2.3.1
-    tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -2717,6 +2727,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     imagemin-gifsicle: 7.0.0
@@ -2749,6 +2760,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2771,6 +2783,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -2794,6 +2807,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     postcss: 8.3.11
@@ -2821,6 +2835,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -2846,6 +2861,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     "@wordpress/browserslist-config": 4.1.0
@@ -2865,6 +2881,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     prettier: 2.4.1
   languageName: unknown
@@ -2885,6 +2902,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     "@fullhuman/postcss-purgecss": 4.0.3
   languageName: unknown
@@ -2916,6 +2934,7 @@ __metadata:
     tslib: ^2.3.1
     tsyringe: ^4.6.0
     type-fest: 2.5.1
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     react: 17.0.2
@@ -2939,6 +2958,7 @@ __metadata:
     sass-loader: 12.2.0
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     sass: 1.43.3
@@ -2959,6 +2979,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
     webpack-dev-middleware: 5.2.1
     webpack-hot-middleware: 2.25.1
@@ -2985,6 +3006,7 @@ __metadata:
     tslib: ^2.3.1
     tsyringe: ^4.6.0
     type-fest: 2.5.1
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     "@babel/plugin-syntax-jsx": 7.14.5
@@ -3008,6 +3030,7 @@ __metadata:
     stylelint-webpack-plugin: ^3.0.1
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -3055,7 +3078,7 @@ __metadata:
     ts-node: 10.4.0
     tslib: ^2.3.1
     tsyringe: ^4.6.0
-    typescript: 4.4.4
+    typescript: ^4.4.4
     vfile-reporter: 7.0.2
     webpack: 5.59.1
     webpack-config-dump-plugin: 3.0.1
@@ -3081,6 +3104,7 @@ __metadata:
     tailwindcss: 2.2.17
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     tailwindcss: 2.2.8
   languageName: unknown
@@ -3097,6 +3121,7 @@ __metadata:
     terser-webpack-plugin: ^5.2.4
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -3120,7 +3145,7 @@ __metadata:
     ts-loader: ^9.2.6
     tslib: ^2.3.1
     tsyringe: ^4.6.0
-    typescript: 4.4.4
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     eslint: ^7
@@ -3153,6 +3178,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     vue: 3.2.20
     vue-loader: ^16.8.1
     vue-style-loader: ^4.1.3
@@ -3180,6 +3206,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3196,6 +3223,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3212,6 +3240,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3249,10 +3278,10 @@ __metadata:
     helpful-decorators: ^2.1.0
     html-webpack-plugin: ^5.4.0
     mini-css-extract-plugin: ^2.4.3
-    pretty-format: ^27.3.1
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
     webpack-config-dump-plugin: ^3.0.1
     webpack-manifest-plugin: ^4.0.2
@@ -3273,6 +3302,7 @@ __metadata:
     tslib: ^2.3.1
     tsyringe: ^4.6.0
     type-fest: 2.5.1
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3292,6 +3322,7 @@ __metadata:
     safe-require: ^1.0.4
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     vinyl: ^2.2.1
     webpack: ^5.59.1
   languageName: unknown
@@ -3306,6 +3337,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3321,6 +3353,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   peerDependencies:
     webpack: ">=5"
@@ -3341,6 +3374,7 @@ __metadata:
     resolve-from: 5.0.0
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3356,6 +3390,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     ink: ^3.0.9
     prettier: ^2.3.2
@@ -3373,6 +3408,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     ink: ^3.0.9
     react: ^17.0.2
@@ -3392,6 +3428,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -3412,6 +3449,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -3427,6 +3465,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
     webpack: 5.59.1
   languageName: unknown
   linkType: soft
@@ -3444,6 +3483,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     tslib: ^2.3.1
     tsyringe: ^4.6.0
+    typescript: ^4.4.4
   peerDependencies:
     webpack: ^5.47.1
   languageName: unknown
@@ -6635,7 +6675,7 @@ __metadata:
     tslib: ^2.3.1
     type-fest: 2.5.1
     typedoc: 0.22.6
-    typescript: 4.4.4
+    typescript: ^4.4.4
     weak-napi: 2.0.2
   languageName: unknown
   linkType: soft
@@ -10900,7 +10940,7 @@ __metadata:
     prettier: 2.4.1
     replacestream: 4.0.3
     rimraf: 3.0.2
-    typescript: 4.4.4
+    typescript: ^4.4.4
   languageName: unknown
   linkType: soft
 
@@ -20865,6 +20905,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"type-fest@npm:^2.5.2":
+  version: 2.5.2
+  resolution: "type-fest@npm:2.5.2"
+  checksum: 77b3abd843667570eae295a835a94863a6c64b917b96e20215c6a98c27baacb7c0ac577ef80c28e50dea0a8089e2190cd3f2bd0198e68c0bbfb266346133f0fa
+  languageName: node
+  linkType: hard
+
 "type-is@npm:~1.6.17, type-is@npm:~1.6.18":
   version: 1.6.18
   resolution: "type-is@npm:1.6.18"
@@ -20908,7 +20955,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.4.4":
+"typescript@npm:4.4.4, typescript@npm:^4, typescript@npm:^4.4.4, typescript@npm:~4.4.2":
   version: 4.4.4
   resolution: "typescript@npm:4.4.4"
   bin:
@@ -20918,7 +20965,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.4.4#~builtin<compat/typescript>, typescript@patch:typescript@^4#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.4#~builtin<compat/typescript>, typescript@patch:typescript@~4.4.2#~builtin<compat/typescript>":
   version: 4.4.4
   resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
   bin:
@@ -22225,21 +22272,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yoga-layout-prebuilt@npm:*":
+"yoga-layout-prebuilt@npm:^1.9.6":
   version: 1.10.0
   resolution: "yoga-layout-prebuilt@npm:1.10.0"
   dependencies:
     "@types/yoga-layout": 1.9.2
   checksum: 6954c7c7b04c585a1c974391bea4734611adb85702b5e9131549a1d3dc5b94e69bcfea34121cdaeb5e702663bf290fcce5374910128e54d1031503a57c062865
-  languageName: node
-  linkType: hard
-
-"yoga-layout-prebuilt@patch:yoga-layout-prebuilt@*#.yarn/patches/yoga-layout-prebuilt.patch::locator=bud.js%40workspace%3A.":
-  version: 1.10.0
-  resolution: "yoga-layout-prebuilt@patch:yoga-layout-prebuilt@npm%3A1.10.0#.yarn/patches/yoga-layout-prebuilt.patch::version=1.10.0&hash=8c2d4c&locator=bud.js%40workspace%3A."
-  dependencies:
-    "@types/yoga-layout": 1.9.2
-  checksum: e659d239b6f0a38a70d24e33802f906bf7e78654de91dde99bf59cc2e12a26f7102c57032428312c6c1646a956335157df3bdf06a70a9f5e6974e7dfb6460539
   languageName: node
   linkType: hard
 

@@ -14,4 +14,6 @@
  * @core @packageDocumentation @betaDocumentation
  */
 
+import 'reflect-metadata'
+
 export {Hooks} from './Hooks'

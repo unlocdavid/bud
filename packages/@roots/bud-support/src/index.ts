@@ -1,3 +1,4 @@
+/* eslint-disable simple-import-sort/imports */
 // Copyright (c) Roots Foundation, LLC. All rights reserved.
 // Licensed under the MIT license.
 
@@ -28,14 +29,28 @@
  */
 //
 
-export {
-  container,
-  inject,
-  injectAll,
-  injectable,
-  Lifecycle,
-  scoped,
-} from './container'
+import 'reflect-metadata'
+
+import {container} from 'tsyringe'
+
+/**
+ * `@bind`
+ */
+import {bind} from 'helpful-decorators'
+container.register('decorators', {
+  useValue: {
+    bind,
+  },
+})
+
+/**
+ * LoDash
+ */
+import lodash, {LoDashStatic} from 'lodash'
+container.register<LoDashStatic>('lodash', {useValue: lodash})
+export {LoDashStatic}
+
+export {container}
 
 /**
  * Dependencies
@@ -55,7 +70,7 @@ export * as globby from './external/globby'
 export {humanReadable} from './external/human-readable'
 export {IgnoreEmitWebpackPlugin} from './external/ignore-emit-webpack-plugin'
 export {json5} from './external/json5'
-export {lodash, LoDashStatic} from './external/lodash'
+export {lodash} from './external/lodash'
 export {nanoid} from './external/nanoid'
 export {NodeNotifier} from './external/node-notifier'
 export {patchConsole} from './external/patch-console'
@@ -82,4 +97,4 @@ export * as wpPkgs from './util/wordpressPkgs'
  */
 //
 
-export {bind} from './external/helpful-decorators'
+export {bind} from 'helpful-decorators'

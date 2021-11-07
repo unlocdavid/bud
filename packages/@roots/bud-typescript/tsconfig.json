@@ -2,11 +2,12 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "baseUrl": ".",
     "rootDir": "./src",
     "outDir": "./lib/cjs",
     "declarationDir": "./types",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "types": [
       "node",
       "@roots/bud-api",

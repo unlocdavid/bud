@@ -1,6 +1,6 @@
-import {bind, lodash} from '@roots/bud-support'
+import {container, LoDashStatic} from '@roots/bud-support'
 
-export {bind}
+export const {bind} = container.resolve('decorators')
 export const {
   isEqual,
   isString,
@@ -8,4 +8,4 @@ export const {
   isFunction,
   isNull,
   isUndefined,
-} = lodash
+} = container.resolve<LoDashStatic>('lodash')

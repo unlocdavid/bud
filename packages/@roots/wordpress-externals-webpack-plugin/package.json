@@ -64,7 +64,8 @@
     "@types/eslint": "7.28.2",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.4",
-    "eslint": "7.32.0"
+    "eslint": "7.32.0",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "@roots/bud-support": "workspace:packages/@roots/bud-support",

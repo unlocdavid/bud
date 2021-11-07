@@ -12,16 +12,13 @@
  */
 
 import './interface'
-import 'reflect-metadata'
 
-import {container} from '@roots/bud-support'
+import {container} from 'tsyringe'
 
 import {BudBabelConfig} from './config/babel.config.module'
 import {BudBabelExtension} from './extension/babel.extension.module'
 
-container.register('babel.config', {useClass: BudBabelConfig})
-container.register('@roots/bud-babel', {
-  useClass: BudBabelExtension,
-})
+container.register('bud.babel', BudBabelConfig)
+container.register('@roots/bud-babel', BudBabelExtension)
 
-export {BudBabelExtension as Extension}
+export {BudBabelExtension as extension}

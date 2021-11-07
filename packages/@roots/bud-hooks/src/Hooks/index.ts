@@ -3,9 +3,8 @@ import {
   Hooks as Contract,
   Service,
 } from '@roots/bud-framework'
-import {bind, lodash} from '@roots/bud-support'
-
-const {get, isArray, isFunction, noop, set} = lodash
+import {bind} from 'helpful-decorators'
+import {get, isArray, isFunction, noop, set} from 'lodash'
 
 export class Hooks extends Service implements Contract {
   public name = 'hooks'

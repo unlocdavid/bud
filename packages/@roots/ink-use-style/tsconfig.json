@@ -2,9 +2,10 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "declarationDir": "./types",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "rootDir": "./src",
     "outDir": "./lib/cjs",
     "types": [

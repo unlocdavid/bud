@@ -1,20 +1,21 @@
 import {Service} from '@roots/bud-framework'
 import {Container} from '@roots/container'
-import {isUndefined} from 'lodash'
+import {injectable} from 'tsyringe'
 
-import {bind, isFunction} from './controller.dependencies'
 import {
-  Extension,
-  Framework,
-  Plugin,
-} from './controller.interface'
+  bind,
+  isFunction,
+  isUndefined,
+} from './controller.dependencies'
+import {ExtensionModule, Framework} from './controller.interface'
 
 /**
  * Extension instance controller
  *
  * @public @core
  */
-export class Controller {
+@injectable()
+class Controller {
   /**
    * @internal
    */
@@ -29,6 +30,9 @@ export class Controller {
     return this._app()
   }
 
+  /**
+   * @public
+   */
   public meta: {
     instance: string
     registered: boolean
@@ -52,8 +56,11 @@ export class Controller {
   /**
    * @internal
    */
-  public _module: Extension | Plugin
+  public _module: ExtensionModule
 
+  /**
+   * @public
+   */
   public log: typeof Service.prototype.log
 
   /**
@@ -61,7 +68,7 @@ export class Controller {
    *
    * @public
    */
-  public constructor(_app: Framework, _module: Extension) {
+  public constructor(_app: Framework, _module: ExtensionModule) {
     this._app = () => _app
     this._module = _module
     this.log = this.app.extensions.log
@@ -79,7 +86,6 @@ export class Controller {
     }
 
     if (!this._module.name) {
-      this.app.dump(this._module)
       throw Error(`name is a required property for extensions`)
     }
   }
@@ -216,8 +222,6 @@ export class Controller {
    */
   @bind
   public async register(): Promise<Controller> {
-    this.app.dump(this._module)
-
     if (this.registered === true) {
       this.log('warn', this._module.name, 'already registered')
       return this
@@ -300,3 +304,5 @@ export class Controller {
     return this
   }
 }
+
+export {Controller}

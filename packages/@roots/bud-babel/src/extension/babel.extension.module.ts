@@ -1,16 +1,12 @@
-import {Bud} from '@roots/bud'
 import {Item, Loader} from '@roots/bud-build'
-import {
-  container,
-  inject,
-  Lifecycle,
-  scoped,
-} from '@roots/bud-support'
+import {Framework} from '@roots/bud-framework'
+import {container, inject, Lifecycle, scoped} from 'tsyringe'
+
+const {bind} = container.resolve('decorators')
 
 import {
   DEFAULT_PLUGINS,
   DEFAULT_PRESETS,
-  ident,
 } from '../babel.constants'
 import {BudBabelConfig} from '../config/babel.config.module'
 
@@ -19,13 +15,11 @@ export class BudBabelExtension {
   public name = '@roots/bud-babel'
 
   public constructor(
-    @inject('bud') public bud: Bud,
-    @inject(ident.config) public config: BudBabelConfig,
+    @inject('bud.babel') public config: BudBabelConfig,
   ) {}
 
-  public async register(bud) {
-    bud.dump(this.config)
-
+  @bind
+  public async register(bud: Framework) {
     bud.babel = this.config
 
     bud.build.loaders.babel = new Loader(() =>

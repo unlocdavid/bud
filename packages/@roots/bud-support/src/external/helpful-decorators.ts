@@ -1,3 +1,4 @@
-import {bind} from 'helpful-decorators'
+import decorators from 'helpful-decorators'
+import {container} from 'tsyringe'
 
-export {bind}
+container.register('decorators', {useValue: decorators})

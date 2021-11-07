@@ -1,9 +1,9 @@
-import {container, Lifecycle, scoped} from '@roots/bud-support'
+import {injectable} from 'tsyringe'
 
 import {bind} from '../babel.dependencies'
 import {Registry} from './babel.config.interface'
 
-@scoped(Lifecycle.ContainerScoped)
+@injectable()
 export class BudBabelConfig {
   public plugins: Registry = {}
 

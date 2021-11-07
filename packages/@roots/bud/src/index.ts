@@ -50,7 +50,6 @@
  * @packageDocumentation @betaDocumentation
  */
 
-import '@roots/bud-support'
 import './interface'
 
 export {Bud} from './Bud'
