@@ -75,7 +75,9 @@
     "@roots/wordpress-dependencies-webpack-plugin": "workspace:packages/@roots/wordpress-dependencies-webpack-plugin",
     "autobind-decorator": "^2.4.0",
     "lodash": "^4.17.21",
-    "tslib": "^2.3.1"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1",
+    "tsyringe": "^4.6.0"
   },
   "stableVersion": "4.6.0"
 }

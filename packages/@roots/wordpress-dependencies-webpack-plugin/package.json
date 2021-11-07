@@ -69,7 +69,9 @@
     "@roots/bud-support": "workspace:packages/@roots/bud-support",
     "helpful-decorators": "^2.1.0",
     "lodash": "^4.17.21",
-    "tslib": "^2.3.1"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1",
+    "tsyringe": "^4.6.0"
   },
   "stableVersion": "4.6.0"
 }

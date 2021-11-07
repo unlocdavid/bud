@@ -131,7 +131,6 @@ export class Project
       'Removing storage',
       this.app.path('storage'),
     )
-    // await remove(this.app.path('storage'))
     await ensureFile(this.get('cache.file'))
   }
 

@@ -82,7 +82,9 @@
   "dependencies": {
     "@roots/bud-build": "workspace:packages/@roots/bud-build",
     "postcss-loader": "6.2.0",
-    "tslib": "2.3.1"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1",
+    "tsyringe": "^4.6.0"
   },
   "peerDependencies": {
     "postcss": "8.3.11",

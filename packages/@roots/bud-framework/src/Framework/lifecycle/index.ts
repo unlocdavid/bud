@@ -6,7 +6,7 @@ import {
   DEVELOPMENT_SERVICES,
   LIFECYCLE_EVENTS,
   PARENT_SERVICES,
-} from '../constants'
+} from './constants'
 
 /**
  * Bootstrap interface

@@ -1,11 +1,11 @@
 import {Item, Loader} from '@roots/bud-build'
 import {Framework} from '@roots/bud-framework'
 
-import {Config} from './babel.config'
 import {
   DEFAULT_PLUGINS,
   DEFAULT_PRESETS,
-} from './babel.constants'
+} from '../babel.constants'
+import {BudBabelConfigService} from '../config/babel.config.service'
 
 /**
  * Adds Babel transpiler support to Framework projects
@@ -20,7 +20,7 @@ export const name = '@roots/bud-babel'
  * @public
  */
 export const mixin = async app => ({
-  babel: [Config, app],
+  babel: [BudBabelConfigService, app],
 })
 
 /**

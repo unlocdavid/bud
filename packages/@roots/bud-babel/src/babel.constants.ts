@@ -1,4 +1,9 @@
-import type {Registrable} from './babel.interface'
+import type {Registrable} from './config/babel.config.interface'
+
+export const ident = {
+  config: 'babel.config',
+  extension: 'babel.extension',
+}
 
 /**
  * Default babel plugins

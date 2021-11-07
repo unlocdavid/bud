@@ -1,4 +1,5 @@
 import * as Framework from '@roots/bud-framework'
+import {container} from '@roots/bud-support'
 
 import {Controller} from '../Controller'
 import {bind} from './extensions.dependencies'
@@ -29,6 +30,7 @@ export class Extensions
       | Promise<Framework.Extension.Module>,
   ): Controller {
     const controller = new Controller(this.app, extension)
+
     return controller
   }
 
@@ -65,7 +67,15 @@ export class Extensions
     this.log('time', 'injecting project extensions')
     await Promise.all(
       this.app.project.getKeys('extensions').map(async pkg => {
-        const importResult = await import(pkg)
+        const importedModule = await import(pkg)
+
+        this.app.dump(importedModule.Extension)
+
+        let importResult = container.resolve(
+          importedModule.Extension,
+        ) as any
+
+        this.app.dump(importResult)
 
         this.log('success', `${importResult.name} resolved`)
         const tuples = Object.entries(importResult)
@@ -82,11 +92,6 @@ export class Extensions
         const controller = await this.makeController(
           importResult,
         )
-        if (this.get(importResult) instanceof Controller)
-          this.log(
-            'success',
-            `${importResult.name} added to container`,
-          )
 
         this.set(controller.name, controller)
       }),

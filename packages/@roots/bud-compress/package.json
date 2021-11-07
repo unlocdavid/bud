@@ -78,7 +78,9 @@
   "dependencies": {
     "autobind-decorator": "^2.4.0",
     "compression-webpack-plugin": "^9.0.0",
-    "tslib": "^2.3.1"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1",
+    "tsyringe": "^4.6.0"
   },
   "stableVersion": "4.6.0"
 }

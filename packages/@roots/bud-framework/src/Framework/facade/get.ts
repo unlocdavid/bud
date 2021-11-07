@@ -1,12 +1,13 @@
-import {Framework} from '..'
-import {isFunction} from './framework.dependencies'
+import {isFunction} from 'lodash'
+
+import {Framework} from '../framework.service'
 
 /**
  * get function interface
  *
  * @internal
  */
-interface get {
+export interface get {
   (
     this: Framework,
     name: string,
@@ -19,7 +20,7 @@ interface get {
  *
  * @internal @override
  */
-interface get {
+export interface get {
   (name: string, tap?: (app: Framework) => Framework): Framework
 }
 
@@ -28,7 +29,7 @@ interface get {
  *
  * @public
  */
-const get: get = function (
+export const get: get = function (
   name: string,
   tap?: (app: Framework) => Framework,
 ): Framework {
@@ -42,5 +43,3 @@ const get: get = function (
 
   return instance
 }
-
-export {get}

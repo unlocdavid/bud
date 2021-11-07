@@ -1,5 +1,6 @@
-import type {Framework} from './'
-import {isFunction} from './framework.dependencies'
+import {isFunction} from 'lodash'
+
+import type {Framework} from '..'
 
 export interface when {
   (

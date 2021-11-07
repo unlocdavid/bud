@@ -1,4 +1,5 @@
-import {Framework, Tapable} from '..'
+import {Tapable} from '../..'
+import {Framework} from '..'
 
 export interface tap<T = Framework> {
   (fn: Tapable<[T]>, bound?: boolean): T

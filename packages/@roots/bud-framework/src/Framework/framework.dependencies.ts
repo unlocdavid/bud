@@ -1,5 +1,4 @@
-import {bind, chalk, lodash} from '@roots/bud-support'
+export {bind, chalk} from '@roots/bud-support'
 
-export {bind}
-export {chalk}
-export const {isFunction, isNull, isUndefined} = lodash
+export {highlight} from 'cli-highlight'
+export {format} from 'pretty-format'

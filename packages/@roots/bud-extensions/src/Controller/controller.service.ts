@@ -216,6 +216,8 @@ export class Controller {
    */
   @bind
   public async register(): Promise<Controller> {
+    this.app.dump(this._module)
+
     if (this.registered === true) {
       this.log('warn', this._module.name, 'already registered')
       return this
@@ -223,11 +225,11 @@ export class Controller {
     this.registered = true
 
     await this.mixin()
-
     await this.api()
 
-    if (isFunction(this._module.register))
+    if (isFunction(this._module.register)) {
       await this._module.register(this.app)
+    }
 
     return this
   }

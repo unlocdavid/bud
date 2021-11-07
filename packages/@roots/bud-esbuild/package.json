@@ -82,7 +82,9 @@
     "esbuild-loader": "^2.16.0",
     "fs-extra": "^10.0.0",
     "lodash": "^4.17.21",
-    "tslib": "^2.3.1"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1",
+    "tsyringe": "^4.6.0"
   },
   "stableVersion": "4.6.0"
 }

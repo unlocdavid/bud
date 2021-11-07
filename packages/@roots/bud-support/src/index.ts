@@ -23,11 +23,23 @@
  *
  * @core @packageDocumentation @betaDocumentation
  */
+/**
+ * Container
+ */
+//
+
+export {
+  container,
+  inject,
+  injectAll,
+  injectable,
+  Lifecycle,
+  scoped,
+} from './container'
 
 /**
  * Dependencies
  */
-//
 
 export {chalk} from './external/chalk'
 export {chokidar} from './external/chokidar'
@@ -43,7 +55,7 @@ export * as globby from './external/globby'
 export {humanReadable} from './external/human-readable'
 export {IgnoreEmitWebpackPlugin} from './external/ignore-emit-webpack-plugin'
 export {json5} from './external/json5'
-export {lodash} from './external/lodash'
+export {lodash, LoDashStatic} from './external/lodash'
 export {nanoid} from './external/nanoid'
 export {NodeNotifier} from './external/node-notifier'
 export {patchConsole} from './external/patch-console'

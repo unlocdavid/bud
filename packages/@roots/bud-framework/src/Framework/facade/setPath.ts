@@ -1,4 +1,4 @@
-import {Framework} from '.'
+import {Framework} from '..'
 
 /**
  * setPath function interface

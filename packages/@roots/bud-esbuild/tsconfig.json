@@ -9,7 +9,9 @@
       "node",
       "jest",
       "@roots/bud-api"
-    ]
+    ],
+        "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   },
   "include": [
     "src"

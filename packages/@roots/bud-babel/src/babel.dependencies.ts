@@ -1,6 +1,13 @@
-import {fs, lodash} from '@roots/bud-support'
+import {
+  bind,
+  container,
+  fs,
+  LoDashStatic,
+} from '@roots/bud-support'
 
-export {bind} from '@roots/bud-support'
+export {bind}
 
 export const {existsSync} = fs
-export const {isString} = lodash
+
+export const {isString} =
+  container.resolve<LoDashStatic>('lodash')

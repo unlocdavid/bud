@@ -1,8 +1,9 @@
 import {join} from 'path'
 
-import {Framework, Locations} from '..'
+import {Locations} from '../..'
+import {Framework} from '../framework.service'
 
-interface path {
+export interface path {
   (
     this: Framework,
     key: keyof Locations & string,
@@ -10,11 +11,11 @@ interface path {
   ): string
 }
 
-interface path {
+export interface path {
   (key: keyof Locations & string, ...path: string[]): string
 }
 
-const path: path = function (
+export const path: path = function (
   key: keyof Locations & string,
   ...path: string[]
 ): string {
@@ -28,5 +29,3 @@ const path: path = function (
     ].filter(Boolean),
   )
 }
-
-export {path}

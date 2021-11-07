@@ -11,27 +11,17 @@
  * @packageDocumentation @betaDocumentation
  */
 
-import {Item, Loader} from '@roots/bud-build'
+import './interface'
+import 'reflect-metadata'
 
-import {Config} from './babel.config'
-import * as BudBabelExtension from './babel.extension'
+import {container} from '@roots/bud-support'
 
-declare module '@roots/bud-framework' {
-  interface Framework {
-    babel: Config
-  }
+import {BudBabelConfig} from './config/babel.config.module'
+import {BudBabelExtension} from './extension/babel.extension.module'
 
-  interface Modules {
-    '@roots/bud-babel': typeof BudBabelExtension
-  }
+container.register('babel.config', {useClass: BudBabelConfig})
+container.register('@roots/bud-babel', {
+  useClass: BudBabelExtension,
+})
 
-  interface Loaders {
-    babel: Loader
-  }
-
-  interface Items {
-    babel: Item
-  }
-}
-
-export const {name, mixin, register} = BudBabelExtension
+export {BudBabelExtension as Extension}

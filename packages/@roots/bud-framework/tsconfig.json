@@ -6,6 +6,7 @@
     "outDir": "./lib/cjs",
     "declarationDir": "./types",
     "esModuleInterop": true,
+    "experimentalDecorators": true,
     "types": [
       "node"
     ]

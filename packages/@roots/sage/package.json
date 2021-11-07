@@ -85,7 +85,9 @@
     "@roots/bud-stylelint": "workspace:packages/@roots/bud-stylelint",
     "@roots/bud-tailwindcss": "workspace:packages/@roots/bud-tailwindcss",
     "helpful-decorators": "^2.1.0",
-    "tslib": "^2.3.1"
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.3.1",
+    "tsyringe": "^4.6.0"
   },
   "stableVersion": "4.6.0"
 }

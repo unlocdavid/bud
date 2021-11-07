@@ -33,8 +33,5 @@
     "replacestream": "4.0.3",
     "rimraf": "3.0.2",
     "typescript": "4.4.4"
-  },
-  "dependencies": {
-    "tslib": "2.3.1"
   }
 }

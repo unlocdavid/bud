@@ -17,11 +17,9 @@
   },
   "workspaces": {
     "packages": [
-      "dev/jest/util/resolver",
       "examples/*",
       "packages/@roots/*",
       "packages/base",
-      "site",
       ".yarn/local"
     ]
   },
@@ -90,7 +88,7 @@
     "weak-napi": "2.0.2"
   },
   "dependencies": {
-    "tslib": "2.3.1"
+    "tslib": "^2.3.1"
   },
   "manifest": {
     "name": "bud.js",

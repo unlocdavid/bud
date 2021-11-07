@@ -1,10 +1,8 @@
-import {lodash} from '@roots/bud-support'
+import {get} from 'lodash'
 import Webpack from 'webpack'
 
 import {Configuration} from './Configuration'
 import {Service} from './Service'
-
-const {get} = lodash
 
 /**
  * Container store for initial configuration and general options

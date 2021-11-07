@@ -1,6 +1,6 @@
 import {isFunction} from 'lodash'
 
-import {Framework} from './'
+import {Framework} from '..'
 
 /**
  * Generic type defining the {@link Service.bindMacro} map of

@@ -5,6 +5,8 @@
     "rootDir": "./src",
     "outDir": "./lib/cjs",
     "declarationDir": "./types",
+        "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "types": [
       "node",
       "jest",

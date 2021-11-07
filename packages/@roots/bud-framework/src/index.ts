@@ -36,6 +36,7 @@
  *
  * @core @packageDocumentation @betaDocumentation
  */
+import '@roots/bud-support'
 
 import Build, {Item, Loader, Rule} from './Build'
 import * as Cache from './Cache'
@@ -123,7 +124,7 @@ export interface AsyncFactory<P extends any[], T> {
  *
  * @public
  */
-export interface Tapable<P extends any[] = [Framework], T = any>
+export interface Tapable<P extends any = [Framework], T = any>
   extends Factory<[P], T> {}
 
 /**

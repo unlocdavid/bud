@@ -1,10 +1,15 @@
-import {bind} from './babel.dependencies'
-import {Registry} from './babel.interface'
+import {container, Lifecycle, scoped} from '@roots/bud-support'
 
-export class Config {
+import {bind} from '../babel.dependencies'
+import {Registry} from './babel.config.interface'
+
+@scoped(Lifecycle.ContainerScoped)
+export class BudBabelConfig {
   public plugins: Registry = {}
 
   public presets: Registry = {}
+
+  public constructor() {}
 
   @bind
   public setPreset(

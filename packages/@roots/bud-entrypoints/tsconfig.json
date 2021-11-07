@@ -11,7 +11,9 @@
       "@roots/bud-api",
       "@roots/bud-framework",
       "@roots/entrypoints-webpack-plugin"
-    ]
+    ],
+        "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   },
   "include": [
     "src"
