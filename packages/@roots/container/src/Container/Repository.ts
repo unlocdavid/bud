@@ -1,5 +1,5 @@
 /**
- * Indexed container value store.
+ * Indexed container value settings.
  *
  * @public
  */

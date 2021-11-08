@@ -23,8 +23,8 @@ export const serve: serve = function (config) {
   if (!ctx.root.server) return this
 
   ctx.root.server.config.mutateStore(
-    (store: Server.Configuration) => ({
-      ...store,
+    (settings: Server.Configuration) => ({
+      ...settings,
       ...config,
     }),
   )

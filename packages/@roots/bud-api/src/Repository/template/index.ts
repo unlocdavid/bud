@@ -61,10 +61,10 @@ export const template: template = function (
    * If there were no {@link Options} specified, we're done.
    */
   if (userOptions === false) {
-    this.store.set('html', false)
+    this.settings.set('html', false)
     return this
   }
-  this.store.set('html', true)
+  this.settings.set('html', true)
 
   /**
    * Add {@link BudHtmlWebpackPlugin} if it isn't already added
@@ -83,10 +83,13 @@ export const template: template = function (
    */
   if (!userOptions || userOptions === true) return this
 
-  this.store.merge('extension.html-webpack-plugin', userOptions)
+  this.settings.merge(
+    'extension.html-webpack-plugin',
+    userOptions,
+  )
 
   if (!userOptions.replace) return this
-  this.store.merge(
+  this.settings.merge(
     'extension.interpolate-html-plugin',
     userOptions.replace,
   )

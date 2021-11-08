@@ -8,13 +8,13 @@ import type {
 const BudCleanWebpackPlugin: Extension = {
   name: 'clean-webpack-plugin',
 
-  options: ({store}) =>
-    store.get('extension.clean-webpack-plugin'),
+  options: ({settings}) =>
+    settings.get('extension.clean-webpack-plugin'),
 
   make: (options: Container<Options>) =>
     new Plugin(options.all()),
 
-  when: ({store}) => store.isTrue('clean'),
+  when: ({settings}) => settings.isTrue('clean'),
 }
 
 const {name, options, when, make} = BudCleanWebpackPlugin

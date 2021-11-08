@@ -31,9 +31,9 @@ export function assets(
   globby.globbySync(paths).map((from: string) => {
     const dirName = from.split('/')[from.split('/').length - 2]
 
-    const format = this.store.isTrue('hash')
-      ? this.store.get('hashFormat')
-      : this.store.get('fileFormat')
+    const format = this.settings.isTrue('hash')
+      ? this.settings.get('hashFormat')
+      : this.settings.get('fileFormat')
 
     const plugin = this.extensions.get('copy-webpack-plugin')
 

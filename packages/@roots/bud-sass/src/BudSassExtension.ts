@@ -20,8 +20,8 @@ export const BudSassExtension: BudSassExtension = {
     })
 
     build.rules.sass = new Rule({
-      test: app => app.store.get('patterns.sass'),
-      exclude: app => app.store.get('patterns.modules'),
+      test: app => app.settings.get('patterns.sass'),
+      exclude: app => app.settings.get('patterns.modules'),
       use: ({build, isProduction}) =>
         Array.from(
           new Set([

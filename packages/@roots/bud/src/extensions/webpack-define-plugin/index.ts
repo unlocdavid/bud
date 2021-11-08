@@ -12,8 +12,8 @@ export const when: BudWebpackDefinePlugin['when'] = (_, opts) =>
 
 export const options: BudWebpackDefinePlugin['options'] = ({
   env,
-  store,
+  settings,
 }) => ({
   ...env.getPublicEnv(),
-  ...store.get('extension.webpack-define-plugin'),
+  ...settings.get('extension.webpack-define-plugin'),
 })

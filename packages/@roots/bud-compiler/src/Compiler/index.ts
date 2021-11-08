@@ -92,19 +92,28 @@ export class Compiler extends Service implements Contract {
 
     this.instance = webpack(config)
 
-    this.instance.hooks.done.tap(config[0].name, async stats => {
-      stats && Object.assign(this.stats, stats.toJson())
+    const rootConfig = config[0]
 
-      if (this.app.isProduction) {
-        this.instance.close(err => {
-          if (err) {
-            this.stats.errors.push(err)
-            this.log('error', err)
-          }
-          this.app.close(() => {})
-        })
-      }
-    })
+    if (!rootConfig) {
+      throw new Error('No root configuration found')
+    }
+
+    this.instance.hooks.done.tap(
+      rootConfig.name,
+      async stats => {
+        stats && Object.assign(this.stats, stats.toJson())
+
+        if (this.app.isProduction) {
+          this.instance.close(err => {
+            if (err) {
+              this.stats.errors.push(err)
+              this.log('error', err)
+            }
+            this.app.close(() => {})
+          })
+        }
+      },
+    )
 
     new ProgressPlugin((...args): void => {
       this.progress = args
@@ -143,11 +152,15 @@ export class Compiler extends Service implements Contract {
      * registered to it or if it has no child instances registered.
      */
     if (this.app.children.getEntries().length === 0) {
-      this.app.info(`using config from parent compiler`)
+      this.log(
+        'info',
+        `root compiler will be tapped (no child compilers in use)`,
+      )
       config.push(this.app.build.config)
       return config
     } else {
-      this.app.warn(
+      this.log(
+        'info',
         `root compiler will not be tapped (child compilers in use)`,
       )
     }
@@ -158,11 +171,11 @@ export class Compiler extends Service implements Contract {
      */
     await Promise.all(
       this.app.children.getValues().map(async instance => {
-        if (!instance.name) return
+        if (!instance?.ident) return
 
         this.log(
           'success',
-          `\`${instance.name}\` compiler will be tapped`,
+          `\`${instance?.ident}\` compiler will be tapped`,
         )
 
         await instance.build.make()
@@ -195,13 +208,13 @@ export class Compiler extends Service implements Contract {
       this.stats = stats.toJson(
         this.app.build.config.stats ?? {preset: 'normal'},
       )
-      this.app.store.is('ci', true) &&
+      this.app.settings.is('ci', true) &&
         this.app.log(stats.toString())
     }
 
     if (err) {
       this.stats.errors.push(err)
-      this.app.store.is('ci', true) && this.log('error', err)
+      this.app.settings.is('ci', true) && this.log('error', err)
     }
   }
 }

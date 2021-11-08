@@ -25,8 +25,8 @@ export const tsFeature: Extension.CompilerPlugin = {
     })
 
     build.rules.ts = new Rule({
-      test: app => app.store.get('patterns.ts'),
-      exclude: app => app.store.get('patterns.modules'),
+      test: app => app.settings.get('patterns.ts'),
+      exclude: app => app.settings.get('patterns.modules'),
       use: app => [app.build.items['esbuild-ts']],
     })
 

@@ -26,11 +26,11 @@ const BudBrotliWebpackPlugin: BudBrotliWebpackPlugin = {
 
   make: options => new Plugin(options.all()),
 
-  when: ({store}) => store.isTrue('brotli'),
+  when: ({settings}) => settings.isTrue('brotli'),
 
   api: {
     brotli: function (options) {
-      this.store.set('brotli', true)
+      this.settings.set('brotli', true)
       if (options)
         this.extensions
           .get('compression-webpack-plugin-brotli')

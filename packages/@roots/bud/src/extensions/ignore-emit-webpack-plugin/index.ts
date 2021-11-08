@@ -4,8 +4,8 @@ import {Model} from './ignore-emit-webpack-plugin.interface'
 const plugin: Model = {
   name: 'ignore-emit-webpack-plugin',
 
-  options: ({store}) => ({
-    ignore: store.isFalse('devtool') ? [] : [/.?.map$/],
+  options: ({settings}) => ({
+    ignore: settings.isFalse('devtool') ? [] : [/.?.map$/],
   }),
 
   make: options => new Plugin(options.get('ignore')),

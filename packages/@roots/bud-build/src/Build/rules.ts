@@ -11,8 +11,8 @@ import Rule from '../Rule'
  */
 export const image = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.image'),
-    exclude: ({store}) => store.get('patterns.modules'),
+    test: ({settings}) => settings.get('patterns.image'),
+    exclude: ({settings}) => settings.get('patterns.modules'),
     type: 'asset/resource',
     generator: {
       filename: 'assets/[hash][ext][query]',
@@ -24,8 +24,8 @@ export const image = () =>
  */
 export const font = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.font'),
-    exclude: ({store}) => store.get('patterns.modules'),
+    test: ({settings}) => settings.get('patterns.font'),
+    exclude: ({settings}) => settings.get('patterns.modules'),
     use: ({build}) => [build.items['resolve-url']],
   })
 
@@ -34,8 +34,8 @@ export const font = () =>
  */
 export const svg = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.svg'),
-    exclude: ({store}) => store.get('patterns.modules'),
+    test: ({settings}) => settings.get('patterns.svg'),
+    exclude: ({settings}) => settings.get('patterns.modules'),
     type: 'asset/resource',
     generator: {
       filename: 'assets/[hash][ext][query]',
@@ -47,7 +47,7 @@ export const svg = () =>
  */
 export const html = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.html'),
+    test: ({settings}) => settings.get('patterns.html'),
     use: ({build}) => [build.items.html],
   })
 
@@ -56,7 +56,7 @@ export const html = () =>
  */
 export const csv = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.csv'),
+    test: ({settings}) => settings.get('patterns.csv'),
     use: ({build}) => [build.items.csv],
   })
 
@@ -65,7 +65,7 @@ export const csv = () =>
  */
 export const xml = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.xml'),
+    test: ({settings}) => settings.get('patterns.xml'),
     use: ({build}) => [build.items.xml],
   })
 
@@ -74,7 +74,7 @@ export const xml = () =>
  */
 export const toml: () => Rule = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.toml'),
+    test: ({settings}) => settings.get('patterns.toml'),
     type: () => 'json',
     parser: () => ({
       parse: tomlParser.parse,
@@ -86,7 +86,7 @@ export const toml: () => Rule = () =>
  */
 export const yml: () => Rule = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.yml'),
+    test: ({settings}) => settings.get('patterns.yml'),
     type: 'json',
     parser: () => ({
       parse: yamlParser.parse,
@@ -98,7 +98,7 @@ export const yml: () => Rule = () =>
  */
 export const json5: () => Rule = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.json5'),
+    test: ({settings}) => settings.get('patterns.json5'),
     type: 'json',
     parser: () => ({
       parse: json5Parser.parse,
@@ -110,8 +110,8 @@ export const json5: () => Rule = () =>
  */
 export const css: () => Rule = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.css'),
-    exclude: ({store}) => store.get('patterns.modules'),
+    test: ({settings}) => settings.get('patterns.css'),
+    exclude: ({settings}) => settings.get('patterns.modules'),
     use: ({isProduction, build}) => [
       isProduction ? build.items.minicss : build.items.style,
       build.items.css,
@@ -123,7 +123,7 @@ export const css: () => Rule = () =>
  */
 export const js: () => Rule = () =>
   new Rule({
-    test: ({store}) => store.get('patterns.js'),
-    exclude: ({store}) => store.get('patterns.modules'),
+    test: ({settings}) => settings.get('patterns.js'),
+    exclude: ({settings}) => settings.get('patterns.modules'),
     use: () => [],
   })

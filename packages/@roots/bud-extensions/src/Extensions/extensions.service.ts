@@ -60,7 +60,7 @@ export class Extensions
   @bind
   public async boot(): Promise<void> {
     if (!this.app.isRoot) return
-    if (this.app.store.is('inject', false)) {
+    if (this.app.settings.is('inject', false)) {
       this.log('info', 'injection disabled')
       return
     } else {

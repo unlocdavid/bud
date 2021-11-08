@@ -21,12 +21,12 @@ export class Hooks extends Base implements Contract, Service {
    *
    * @public
    */
-  public async register({store}) {
+  public async register({settings}) {
     const mapLocale = (
       name: keyof Configuration['location'],
     ) => {
       this.on(`location.${name}`, () =>
-        store.get(`location.${name}`),
+        settings.get(`location.${name}`),
       )
     }
 

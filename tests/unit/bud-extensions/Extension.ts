@@ -1,5 +1,5 @@
 import {Bud, factory} from '@roots/bud'
-import {Controller} from '@roots/bud-extensions'
+import {Controller} from '@roots/bud-extensions/src/Controller/controller.service'
 import {Extension} from '@roots/bud-framework'
 import {WebpackPluginInstance} from 'webpack'
 
@@ -29,9 +29,7 @@ describe.skip('@roots/bud-extensions Controller', function () {
   }
 
   beforeAll(async () => {
-    bud = await factory({
-      config: {ci: true, log: false},
-    })
+    bud = await factory()
   })
 
   it('is constructable', () => {

@@ -39,7 +39,7 @@ export class Project
     this.log(
       'info',
       `inject feature is ${
-        this.app.store.is(`inject`, true)
+        this.app.settings.is(`inject`, true)
           ? `enabled`
           : `disabled`
       }`,
@@ -47,22 +47,22 @@ export class Project
       .log(
         'info',
         `project directory set as`,
-        this.app.store.get('location.project'),
+        this.app.settings.get('location.project'),
       )
       .log(
         'info',
         `project src directory set as`,
-        this.app.store.get('location.src'),
+        this.app.settings.get('location.src'),
       )
       .log(
         'info',
         `project dist directory set as`,
-        this.app.store.get('location.dist'),
+        this.app.settings.get('location.dist'),
       )
       .log(
         'info',
         `project cache directory set as`,
-        this.app.store.get('location.storage'),
+        this.app.settings.get('location.storage'),
       )
 
     this.mergeStore({
@@ -78,7 +78,7 @@ export class Project
 
   @bind
   public async registered(): Promise<void> {
-    if (this.app.store.is('cache', false)) {
+    if (this.app.settings.is('cache', false)) {
       this.log('warn', 'caching disabled. flushing.')
       await this.clearCaches()
     }
@@ -153,7 +153,7 @@ export class Project
   public async searchConfig({key, searchStrings}) {
     const explorer = new Config(this.app, searchStrings)
 
-    if (this.app.store.is('cache', false)) {
+    if (this.app.settings.is('cache', false)) {
       this.log('warn', `clearing ${key} config cache`)
       explorer.clearCaches()
     }

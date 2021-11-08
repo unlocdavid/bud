@@ -18,6 +18,7 @@ module.exports = async () => {
       },
     },
     moduleNameMapper,
+    globalSetup: '<rootDir>/dev/jest/util/setup.js',
     rootDir: process.cwd(),
     preset: 'ts-jest',
     testEnvironment: 'node',

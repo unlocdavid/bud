@@ -19,6 +19,6 @@ export const hash: hash = function (enabled = true) {
     `file hashing is ${enabled ? 'enabled' : 'disabled'}`,
   )
 
-  this.store.set('hash', enabled)
+  this.settings.set('hash', enabled)
   return this
 }

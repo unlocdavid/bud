@@ -56,9 +56,9 @@ const extension: Extension.Module = {
   }),
 
   boot: (app: Framework) => {
-    const {build, store, hooks} = app
+    const {build, settings, hooks} = app
 
-    store.set('patterns.mdx', /\.mdx?$/)
+    settings.set('patterns.mdx', /\.mdx?$/)
 
     build.loaders.mdx = new Loader(
       require.resolve('@mdx-js/loader'),
@@ -70,8 +70,8 @@ const extension: Extension.Module = {
     })
 
     build.rules.mdx = new Rule({
-      test: ({store}) => store.get('patterns.mdx'),
-      exclude: ({store}) => store.get('patterns.modules'),
+      test: ({settings}) => settings.get('patterns.mdx'),
+      exclude: ({settings}) => settings.get('patterns.modules'),
       use: ({build}) => [build.items.babel, build.items.mdx],
     })
 

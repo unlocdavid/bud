@@ -87,7 +87,6 @@ export class Framework {
   public get isRoot(): boolean {
     return this.root.ident === this.ident
   }
-
   public get isChild(): boolean {
     return this.root.ident !== this.ident
   }
@@ -232,15 +231,10 @@ export class Framework {
   public services: Container<Service>
 
   /**
-   * Container service for holding configuration values
+   * Settings
    *
    * @public
-   * @deprecated use `bud.settings` instead
    */
-  public get store(): Container<Configuration> {
-    return this.settings
-  }
-
   public settings: Container<Configuration>
 
   /**

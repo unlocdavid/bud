@@ -139,7 +139,7 @@ export default class
       .route('/__roots/config.json')
       .get((_req, res) => {
         res.send({
-          ...this.app.store.all(),
+          ...this.app.settings.all(),
           ...this.config.all(),
         })
 

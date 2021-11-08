@@ -34,9 +34,7 @@ const task = async (cmd, paths) => {
           })
 
         await task
-      } catch (err) {
-        console.error(err)
-      }
+      } catch (err) {}
     }),
   )
 }
@@ -47,7 +45,7 @@ module.exports = async () => {
   const examples = await paths()
 
   // await task('init', examples)
-  await task('build', examples)
+  await task('build --no-cache --ci', examples)
 
   global.examples = examples
 }

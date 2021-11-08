@@ -101,7 +101,7 @@ export const repository: repository = {
 export async function initializeStore(this: Project.Interface) {
   this.setStore({
     ...repository,
-    cli: this.app.store.get('cli'),
+    cli: this.app.settings.get('cli'),
     env: {
       public: this.app.env.getPublicEnv(),
       all: this.app.env.all(),
@@ -120,14 +120,14 @@ export async function initializeStore(this: Project.Interface) {
   this.app
     .when(
       this.has(`manifest.${this.app.ident}.inject`),
-      ({store}) =>
-        store.set(
+      ({settings}) =>
+        settings.set(
           'inject',
           this.get(`manifest.${this.app.ident}.inject`),
         ),
     )
     .when(this.has(`manifest.${this.app.ident}.paths`), () =>
-      this.app.store.merge(
+      this.app.settings.merge(
         'location',
         this.get(`manifest.${this.app.ident}.paths`),
       ),

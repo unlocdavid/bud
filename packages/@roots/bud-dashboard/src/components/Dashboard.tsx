@@ -61,7 +61,7 @@ export const Dashboard = ({bud}: {bud: Framework}) => {
    * @remarks
    * {@link @roots/ink-use-style#useStyle | @roots/ink-use-style useStyle hook}
    */
-  const theme = useStyle(bud?.store?.get('theme'))
+  const theme = useStyle(bud?.settings?.get('theme'))
 
   /**
    * Patch console pipes stdout/stderr through a callback

@@ -1,10 +1,12 @@
+import {Bud} from '../../bud'
+
 export const config = async (app, flags) => {
   /**
    * Handle --src flag
    */
   if (typeof flags.src !== 'undefined') {
     app.setPath('src', flags.src)
-    app.children.every((_name, child) =>
+    app.children.every((_ident: string, child: Bud) =>
       child.setPath('src', flags.src),
     )
   }
@@ -14,7 +16,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.dist !== 'undefined') {
     app.setPath('dist', flags.dist)
-    app.children.every((_name, child) =>
+    app.children.every((_ident: string, child: Bud) =>
       child.setPath('dist', flags.dist),
     )
   }
@@ -24,7 +26,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.publicPath !== 'undefined') {
     app.setPublicPath(flags.publicPath)
-    app.children.every((_name, child) =>
+    app.children.every((_ident: string, child: Bud) =>
       child.setPublicPath(flags.publicPath),
     )
   }
@@ -34,7 +36,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.cache !== 'undefined') {
     app.persist(flags.cache)
-    app.children.every((_name, child) =>
+    app.children.every((_ident: string, child: Bud) =>
       child.persist(flags.cache),
     )
   }
@@ -44,7 +46,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.devtool !== 'undefined') {
     app.devtool(flags.devtool)
-    app.children.every((_name, child) =>
+    app.children.every((_ident: string, child: Bud) =>
       child.devtool(flags.devtool),
     )
   }
@@ -54,7 +56,9 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.hash !== 'undefined') {
     app.hash(flags.hash)
-    app.children.every((_name, child) => child.hash(flags.hash))
+    app.children.every((_ident: string, child: Bud) =>
+      child.hash(flags.hash),
+    )
   }
 
   /**
@@ -62,7 +66,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.runtime !== 'undefined') {
     app.runtime(flags.runtime)
-    app.children.every((_name, child) =>
+    app.children.every((_ident: string, child: Bud) =>
       child.runtime(flags.runtime),
     )
   }
@@ -71,9 +75,9 @@ export const config = async (app, flags) => {
    * Handle --manifest flag
    */
   if (typeof flags.manifest !== 'undefined') {
-    app.store.set('manifest', flags.manifest)
-    app.children.every((_name, child) =>
-      child.store.set('manifest', flags.manifest),
+    app.settings.set('manifest', flags.manifest)
+    app.children.every((_ident: string, child: Bud) =>
+      child.settings.set('manifest', flags.manifest),
     )
   }
 
@@ -82,7 +86,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.minimize !== 'undefined') {
     app.minimize(flags.minimize)
-    app.children.every((_name, child) => {
+    app.children.every((_ident: string, child: Bud) => {
       child.minimize(flags.minimize)
     })
   }
@@ -92,7 +96,7 @@ export const config = async (app, flags) => {
    */
   if (typeof flags.vendor !== 'undefined') {
     app.splitChunks(flags.vendor)
-    app.children.every((_name, child) => {
+    app.children.every((_ident: string, child: Bud) => {
       child.splitChunks(flags.vendor)
     })
   }

@@ -15,14 +15,16 @@ export const BudHtmlWebpackPlugin: BudHtmlWebpackPlugin = {
       publicPath: app.publicPath(),
       templateParameters: {
         ...(app.env.getPublicEnv() ?? {}),
-        ...(app.store.get('extension.webpack-define-plugin') ??
-          {}),
+        ...(app.settings.get(
+          'extension.webpack-define-plugin',
+        ) ?? {}),
       },
-      ...(app.store.get('extension.html-webpack-plugin') ?? {}),
+      ...(app.settings.get('extension.html-webpack-plugin') ??
+        {}),
     }
   },
 
   make: options => new HtmlWebpackPlugin(options.all()),
 
-  when: ({store}) => store.isTrue('html'),
+  when: ({settings}) => settings.isTrue('html'),
 }

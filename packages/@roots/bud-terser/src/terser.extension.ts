@@ -7,7 +7,7 @@ export const name = '@roots/bud-terser'
 
 export const options = (app: Framework) => ({
   parallel: app.hooks.filter('build.parallelism'),
-  include: app.store.get('patterns.js'),
+  include: app.settings.get('patterns.js'),
   extractComments: false,
   terserOptions: {
     parse: {
@@ -25,7 +25,7 @@ export const options = (app: Framework) => ({
   },
 })
 
-export const boot = ({extensions, hooks, store}) => {
+export const boot = ({extensions, hooks, settings}) => {
   hooks.on('build.optimization.minimizer', minimizer => {
     minimizer.push(
       new TerserPlugin(

@@ -34,7 +34,7 @@ export const config = async (app, configKey) => {
                   value,
                 )
 
-                return instance.store.set(key, value)
+                return instance.settings.set(key, value)
               }
 
               if (!item) {

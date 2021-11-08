@@ -13,13 +13,13 @@ export interface BudEslintWebpackPlugin
 export const BudEslintWebpackPlugin: BudEslintWebpackPlugin = {
   name: 'eslint-webpack-plugin',
 
-  options: ({path, store}) => ({
+  options: ({path, settings}) => ({
     extensions: ['js', 'jsx', 'ts', 'tsx', 'vue'],
     cache: true,
     cacheLocation: path('storage', 'cache', 'eslint.json'),
     context: path('src'),
     cwd: path('project'),
-    exclude: store.get('patterns.module'),
+    exclude: settings.get('patterns.module'),
     failOnError: true,
   }),
 

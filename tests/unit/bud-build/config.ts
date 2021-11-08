@@ -1,20 +1,12 @@
-import {config, factory, Framework} from '@roots/bud'
+import {factory, Framework} from '@roots/bud'
 import {json5, toml, yaml} from '@roots/bud-support'
 import {RuleSetRule} from 'webpack'
 
-describe('bud.build.config', function () {
+describe.skip('bud.build.config', function () {
   let bud: Framework
 
   beforeAll(async () => {
-    bud = await factory({
-      config: {
-        ...config,
-        location: {
-          ...config.location,
-          project: process.cwd().concat('/examples/babel'),
-        },
-      },
-    })
+    bud = await factory()
 
     bud.build.make()
   })

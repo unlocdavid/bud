@@ -29,7 +29,7 @@ const make: BudGzipWebpackPlugin['make'] = options =>
 
 const api: BudGzipWebpackPlugin['api'] = {
   gzip: function (options) {
-    this.store.set('gzip', true)
+    this.settings.set('gzip', true)
 
     if (options)
       this.extensions

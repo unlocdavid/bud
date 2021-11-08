@@ -71,7 +71,7 @@ export class Container<I = any> {
   }
 
   /**
-   * Merge values onto the container store.
+   * Merge values onto the container settings.
    *
    * @example
    * ```js

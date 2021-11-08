@@ -15,15 +15,15 @@ const BudWebpackManifestPlugin: Plugin = {
   /**
    * @public
    */
-  options: ({store}) =>
-    store.get('extension.webpack-manifest-plugin'),
+  options: ({settings}) =>
+    settings.get('extension.webpack-manifest-plugin'),
 
   /**
    * @public
    */
-  make: (options, {store}) => {
+  make: (options, {settings}) => {
     return new WebpackManifestPlugin({
-      publicPath: store.get('location.publicPath'),
+      publicPath: settings.get('location.publicPath'),
       ...options.all(),
     })
   },
@@ -31,7 +31,7 @@ const BudWebpackManifestPlugin: Plugin = {
   /**
    * @public
    */
-  when: app => app.store.isTrue('manifest'),
+  when: app => app.settings.isTrue('manifest'),
 }
 
 export const {name, options, make, when} =

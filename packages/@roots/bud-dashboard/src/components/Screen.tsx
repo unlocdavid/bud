@@ -21,7 +21,7 @@ export const Screen = ({
   title ? (
     <Box flexDirection="column" marginY={1}>
       <Text
-        backgroundColor={app.store.get(
+        backgroundColor={app.settings.get(
           color ?? 'theme.colors.primary',
         )}
       >

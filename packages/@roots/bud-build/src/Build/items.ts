@@ -9,11 +9,11 @@ export default {
   asset: () =>
     new Item({
       loader: ({build}) => build.loaders.file,
-      options: ({store}) => ({
+      options: ({settings}) => ({
         name: `assets/${
-          store.isTrue('hash')
-            ? store.get('hashFormat')
-            : store.get('fileFormat')
+          settings.isTrue('hash')
+            ? settings.get('hashFormat')
+            : settings.get('fileFormat')
         }.[ext]`,
       }),
     }),
@@ -68,7 +68,7 @@ export default {
   minicss: () =>
     new Item({
       loader: ({build}) => build.loaders.minicss,
-      options: ({store}: Framework) => ({}),
+      options: ({settings}: Framework) => ({}),
     }),
 
   /**
@@ -85,11 +85,11 @@ export default {
   file: () =>
     new Item({
       loader: ({build}) => build.loaders.file,
-      options: ({store}) => ({
+      options: ({settings}) => ({
         name: `${
-          store.isTrue('hash')
-            ? store.get('hashFormat')
-            : store.get('fileFormat')
+          settings.isTrue('hash')
+            ? settings.get('hashFormat')
+            : settings.get('fileFormat')
         }.[ext]`,
       }),
     }),

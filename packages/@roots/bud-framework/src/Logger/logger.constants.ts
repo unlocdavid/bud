@@ -9,7 +9,7 @@ export const INSTANCE_CONFIG: SignaleConfig = {
   displayScope: true,
   displayBadge: true,
   displayDate: false,
-  displayFilename: false,
+  displayFilename: true,
   displayLabel: true,
   displayTimestamp: false,
   underlineLabel: false,
@@ -51,7 +51,7 @@ export const INSTANCE_TYPES: INSTANCE_TYPES = {
     logLevel: 'error',
   },
   fav: {
-    badge: `\n${figures.heart}`,
+    badge: `${figures.heart}`,
     color: 'magenta',
     label: 'bootstrapping',
     logLevel: 'info',

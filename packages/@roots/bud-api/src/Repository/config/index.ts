@@ -33,7 +33,7 @@ export function config(
   if (!overrides)
     throw new Error('config() requires a config object')
 
-  this.store.mergeStore(overrides)
+  this.settings.mergeStore(overrides)
 
   return this
 }

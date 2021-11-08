@@ -40,10 +40,12 @@ export const BudInterpolateHtmlPlugin: BudInterpolateHtmlPlugin =
     options(app: Framework) {
       return {
         ...(app.env.getPublicEnv() ?? {}),
-        ...(app.store.get(`extension.webpack-define-plugin`) ??
-          {}),
-        ...(app.store.get(`extension.interpolate-html-plugin`) ??
-          {}),
+        ...(app.settings.get(
+          `extension.webpack-define-plugin`,
+        ) ?? {}),
+        ...(app.settings.get(
+          `extension.interpolate-html-plugin`,
+        ) ?? {}),
       }
     },
 

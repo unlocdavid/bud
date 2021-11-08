@@ -14,8 +14,8 @@ const BudTypeScriptExtension: BudTypeScriptExtension = {
     typecheck,
   },
 
-  boot: ({build, hooks, store}) => {
-    store.set('patterns.ts', /\.tsx?$/)
+  boot: ({build, hooks, settings}) => {
+    settings.set('patterns.ts', /\.tsx?$/)
 
     build.loaders['ts'] = new Loader(
       require.resolve('ts-loader'),
@@ -30,8 +30,8 @@ const BudTypeScriptExtension: BudTypeScriptExtension = {
     })
 
     build.rules['ts'] = new Rule({
-      test: store.get('patterns.ts'),
-      exclude: store.get('patterns.modules'),
+      test: settings.get('patterns.ts'),
+      exclude: settings.get('patterns.modules'),
       use: ({build}) => [
         build.items['babel'],
         build.items['ts'],

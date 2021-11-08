@@ -13,7 +13,7 @@ export const VueExtension: Extension.Module = {
     const {
       build: {loaders, items, rules},
       use,
-      store,
+      settings,
       hooks,
     } = app
 
@@ -26,7 +26,7 @@ export const VueExtension: Extension.Module = {
       'build.module.rules.before',
       (rules: Configuration['module']['rules']) => [
         {
-          test: store.get('patterns.vue'),
+          test: settings.get('patterns.vue'),
           use: [{loader: require.resolve('vue-loader')}],
         },
         ...(rules ?? []),

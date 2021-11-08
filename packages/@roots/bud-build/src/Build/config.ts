@@ -35,7 +35,7 @@ export function config(app: Framework): void {
     /**
      * Bail
      */
-    .hooks.on('build.bail', () => app.store.get('build.bail'))
+    .hooks.on('build.bail', () => app.settings.get('build.bail'))
 
     /**
      * Cache
@@ -51,7 +51,7 @@ export function config(app: Framework): void {
      * Devtool
      */
     .hooks.on('build.devtool', () =>
-      app.store.get('build.devtool'),
+      app.settings.get('build.devtool'),
     )
 
     /**
@@ -63,7 +63,7 @@ export function config(app: Framework): void {
      * InfrastructureLogging
      */
     .hooks.on('build.infrastructureLogging', () =>
-      app.store.get('build.infrastructureLogging'),
+      app.settings.get('build.infrastructureLogging'),
     )
 
     /**
@@ -117,17 +117,17 @@ export function config(app: Framework): void {
       'build.output.filename',
       () =>
         `${
-          app.store.get('hash')
-            ? app.store.get('hashFormat')
-            : app.store.get('fileFormat')
+          app.settings.get('hash')
+            ? app.settings.get('hashFormat')
+            : app.settings.get('fileFormat')
         }.js`,
     )
     .hooks.on('build.output.path', () => app.path('dist'))
     .hooks.on('build.output.pathinfo', () =>
-      app.store.get('build.output.pathinfo'),
+      app.settings.get('build.output.pathinfo'),
     )
     .hooks.on('build.output.publicPath', () =>
-      app.store.get('location.publicPath'),
+      app.settings.get('location.publicPath'),
     )
 
     /**
@@ -152,20 +152,20 @@ export function config(app: Framework): void {
       ),
     }))
     .hooks.on('build.optimization.emitOnErrors', () =>
-      app.store.get('build.optimization.emitOnErrors'),
+      app.settings.get('build.optimization.emitOnErrors'),
     )
     .hooks.on('build.optimization.minimize', () => false)
     .hooks.on('build.optimization.minimizer', () => ['...'])
     .hooks.on('build.optimization.moduleIds', () =>
-      app.store.get('build.optimization.moduleIds'),
+      app.settings.get('build.optimization.moduleIds'),
     )
     .hooks.on('build.optimization.removeEmptyChunks', () =>
-      app.store.get('build.optimization.removeEmptyChunks'),
+      app.settings.get('build.optimization.removeEmptyChunks'),
     )
     .hooks.on('build.optimization.runtimeChunk', () => undefined)
     .hooks.on('build.optimization.splitChunks', () =>
-      app.store.is('splitChunks', true)
-        ? app.store.get('build.optimization.splitChunks')
+      app.settings.is('splitChunks', true)
+        ? app.settings.get('build.optimization.splitChunks')
         : false,
     )
 
@@ -173,14 +173,14 @@ export function config(app: Framework): void {
      * Parallelism
      */
     .hooks.on('build.parallelism', () =>
-      app.store.get('build.parallelism'),
+      app.settings.get('build.parallelism'),
     )
 
     /**
      * Performance
      */
     .hooks.on('build.performance', () =>
-      app.store.get('build.performance'),
+      app.settings.get('build.performance'),
     )
 
     /**
@@ -192,7 +192,7 @@ export function config(app: Framework): void {
      * Profile
      */
     .hooks.on('build.profile', () =>
-      app.store.get('build.profile'),
+      app.settings.get('build.profile'),
     )
 
     /**
@@ -209,7 +209,7 @@ export function config(app: Framework): void {
       alias: app.hooks.filter('build.resolve.alias'),
       extensions: app.hooks.filter(
         'build.resolve.extensions',
-        app.store.get('build.resolve.extensions'),
+        app.settings.get('build.resolve.extensions'),
       ),
       modules: app.hooks.filter('build.resolve.modules'),
     }))
@@ -219,7 +219,7 @@ export function config(app: Framework): void {
         app.hooks.filter('location.src'),
         app.hooks.filter('location.modules'),
         ...(app.project?.get('resolve') ??
-          app.parent?.project.get('resolve') ??
+          app.root?.project.get('resolve') ??
           []),
       ]),
     ])
@@ -228,7 +228,7 @@ export function config(app: Framework): void {
      * Stats
      */
     .hooks.on('build.stats', (): Configuration['stats'] =>
-      app.store.get('build.stats'),
+      app.settings.get('build.stats'),
     )
 
     /**
@@ -243,8 +243,10 @@ export function config(app: Framework): void {
     /**
      * Watch
      */
-    .hooks.on('build.watch', () => app.store.get('build.watch'))
+    .hooks.on('build.watch', () =>
+      app.settings.get('build.watch'),
+    )
     .hooks.on('build.watchOptions', () =>
-      app.store.get('build.watchOptions'),
+      app.settings.get('build.watchOptions'),
     )
 }

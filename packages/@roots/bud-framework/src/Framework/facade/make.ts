@@ -10,7 +10,7 @@ import {Framework} from '..'
 export interface make {
   (
     name: string,
-    tap?: (app: Framework) => any,
+    tap?: (app: Framework) => Promise<any>,
   ): Promise<Framework>
 }
 
@@ -20,13 +20,28 @@ export interface make {
  * @internal
  */
 function handleChildNestingError(this: Framework) {
-  !this.isRoot &&
-    this.error(
-      `\`${this.ident}\` is a child compiler but you tried to call make from it. Try \`${this.ident}.parent.make\` instead.`,
-      `${this.ident}.make`,
-    )
+  if (this.root) return
+
+  this.error(
+    `\`${this.ident}\` is a child compiler but you tried to call make from it.`,
+    `Try \`${this.ident}.root.make\` instead.`,
+  )
+  throw new Error('compiling child target not supported')
 }
 
+/**
+ * Returns true if compiler should NOT be used (when the --target flag
+ * is set but the compiler is not a target).
+ *
+ * @internal
+ */
+function compilerIsExcluded(ctx: Framework, name: string) {
+  return ctx.project.has('cli.flags.target') &&
+    ctx.project.get('cli.flags.target').length &&
+    !ctx.project.get('cli.flags.target').includes(name)
+    ? true
+    : false
+}
 /**
  * Instantiate a child instance and add to {@link Framework.children} container
  *
@@ -45,11 +60,14 @@ function handleChildNestingError(this: Framework) {
  */
 export async function make(
   name: string,
-  tap?: (app: Framework) => any,
+  callback?: (app: Framework) => Promise<any>,
 ): Promise<Framework> {
   const ctx = this as Framework
 
   handleChildNestingError.bind(ctx)()
+
+  if (compilerIsExcluded(ctx, name)) return
+
   ctx.logger.instance.fav(`new instance:`, name)
 
   const bud = container
@@ -62,7 +80,7 @@ export async function make(
 
   await bud.lifecycle()
 
-  if (tap) await tap(bud)
+  if (callback) await callback(bud)
 
   ctx.children.set(name, bud)
 
