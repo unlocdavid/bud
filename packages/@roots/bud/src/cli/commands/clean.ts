@@ -1,4 +1,4 @@
-import {Bud} from '../../Bud'
+import {Bud} from '../../'
 import {remove} from '../cli.dependencies'
 import {Command} from '../Command'
 import {Runner} from '../Runner'

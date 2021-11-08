@@ -4,7 +4,7 @@ import {
   cosmiconfigTsLoader,
 } from '@roots/bud-support'
 
-import {Bud} from '../../../Bud'
+import {Bud} from '../../..'
 
 export class Config {
   public cosmiconfig = cosmiconfig.cosmiconfig
@@ -14,7 +14,7 @@ export class Config {
     public app: Bud,
     searchPlaces: cosmiconfig.Options['searchPlaces'],
   ) {
-    this.explorer = this.cosmiconfig(this.app.name, {
+    this.explorer = this.cosmiconfig(this.app.ident, {
       loaders: {'.ts': cosmiconfigTsLoader},
       ignoreEmptySearchPlaces: true,
       stopDir: this.app.path('project'),

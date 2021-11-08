@@ -1,6 +1,6 @@
 import {container, Execa} from '@roots/bud-support'
 
-import type {Bud} from '../../../Bud'
+import type {Bud} from '../../..'
 import {Command} from '../../Command'
 import {Runner} from '../../Runner'
 

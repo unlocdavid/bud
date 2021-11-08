@@ -1,5 +1,4 @@
 import {Container} from '@roots/container'
-import {Service} from 'src/Service'
 
 import {
   Api,
@@ -12,7 +11,7 @@ import {
   Hooks,
   Mode,
   Server,
-  Store,
+  Service,
 } from '../'
 import * as Cache from '../Cache'
 import {Extensions} from '../Extensions'
@@ -32,7 +31,6 @@ import {setPath} from './facade/setPath'
 import {tap} from './facade/tap'
 import {when} from './facade/when'
 import {bind, format, highlight} from './framework.dependencies'
-import {Constructor} from './framework.interface'
 import {lifecycle} from './lifecycle'
 
 /**
@@ -41,13 +39,6 @@ import {lifecycle} from './lifecycle'
  * @core @public
  */
 export class Framework {
-  /**
-   * Concrete implementation of the {@link Framework}
-   *
-   * @public
-   */
-  public implementation: Constructor
-
   /**
    * Framework name
    *
@@ -58,7 +49,7 @@ export class Framework {
    *
    * @public
    */
-  public name: string
+  public ident: string
 
   /**
    * Compilation mode
@@ -68,7 +59,12 @@ export class Framework {
    *
    * @defaultValue 'production'
    */
-  public mode: Mode = 'production'
+  public get mode(): Mode {
+    return this.settings.get('mode')
+  }
+  public set mode(mode: Mode) {
+    this.settings.set('mode', mode)
+  }
 
   /**
    * Parent {@link Framework} instance
@@ -89,11 +85,11 @@ export class Framework {
    * @readonly
    */
   public get isRoot(): boolean {
-    return this.root.name === this.name
+    return this.root.ident === this.ident
   }
 
   public get isChild(): boolean {
-    return this.root.name !== this.name
+    return this.root.ident !== this.ident
   }
 
   /**
@@ -229,11 +225,23 @@ export class Framework {
   public server: Server.Interface
 
   /**
-   * Container service for holding configuration values
+   * Services container
    *
    * @public
    */
-  public store: Store
+  public services: Container<Service>
+
+  /**
+   * Container service for holding configuration values
+   *
+   * @public
+   * @deprecated use `bud.settings` instead
+   */
+  public get store(): Container<Configuration> {
+    return this.settings
+  }
+
+  public settings: Container<Configuration>
 
   /**
    * True when {@link Framework.mode} is `production`
@@ -260,15 +268,7 @@ export class Framework {
    *
    * @public
    */
-  public constructor(
-    public services: Container<Service>,
-    public settings: Configuration,
-  ) {
-    this.store = new Store<Configuration>(this)
-    this.store.setStore(settings)
-
-    this.mode = settings.mode
-
+  public constructor() {
     this.root = this
     this.children = new Container()
 

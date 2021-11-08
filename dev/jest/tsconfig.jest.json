@@ -3,6 +3,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "noEmit": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "types": [
       "node",
       "jest"

@@ -1,11 +1,8 @@
-import {
-  Configuration,
-  Constructor,
-  Framework,
-  Service,
-} from '@roots/bud-framework'
-import {inject, injectable} from '@roots/bud-support'
+import {Framework, Service} from '@roots/bud-framework'
 import {Container} from '@roots/container'
+import {inject, injectable} from 'tsyringe'
+
+import {Settings} from '../settings/settings.interface'
 
 /**
  * ⚡️ Bud - Frontend build tools combining the best parts of Symfony Encore and Laravel Mix
@@ -19,17 +16,7 @@ export class Bud extends Framework {
    *
    * @public
    */
-  public name: string = 'bud'
-
-  /**
-   * Constructor definition
-   *
-   * @remarks
-   * Used internally when creating child Bud instances
-   *
-   * @public
-   */
-  public implementation: Constructor = Bud
+  public ident: string = 'bud'
 
   /**
    * Class constructor
@@ -37,9 +24,10 @@ export class Bud extends Framework {
    * @public
    */
   public constructor(
-    @inject('bud.services') services: Container<Service>,
-    @inject('bud.settings') settings: Configuration,
+    @inject('bud.services') public services: Container<Service>,
+    @inject('bud.settings')
+    public settings: Settings,
   ) {
-    super(services, settings)
+    super()
   }
 }

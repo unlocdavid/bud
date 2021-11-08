@@ -1,4 +1,6 @@
-import BudModule from './bud.module'
+import {container} from 'tsyringe'
 
-export {Bud} from './bud.service'
-export {BudModule}
+import {module} from './bud.module'
+import {Bud} from './bud.service'
+
+export {container, module, Bud, Bud as Service}

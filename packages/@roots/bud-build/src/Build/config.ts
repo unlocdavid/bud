@@ -98,7 +98,7 @@ export function config(app: Framework): void {
     /**
      * Name
      */
-    .hooks.on('build.name', () => app.name)
+    .hooks.on('build.name', () => app.ident)
 
     /**
      * Node
@@ -199,8 +199,9 @@ export function config(app: Framework): void {
      * RecordsPath
      */
     .hooks.on('build.recordsPath', () =>
-      app.path('storage', app.name, `modules.json`),
+      app.path('storage', app.ident, `modules.json`),
     )
+
     /**
      * Resolve
      */

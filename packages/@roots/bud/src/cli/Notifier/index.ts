@@ -1,6 +1,6 @@
 import {resolve} from 'path'
 
-import {Bud} from '../../Bud'
+import {Bud} from '../../bud'
 import {NodeNotifier} from '../cli.dependencies'
 
 /**
@@ -30,7 +30,7 @@ export class Notifier {
   }
 
   public notify(app: Bud, props) {
-    const group = app.project.getProjectInfo().name ?? app.name
+    const group = app.project.getProjectInfo().name ?? app.ident
 
     const title =
       props?.title || app.compiler.stats.errors.length > 0

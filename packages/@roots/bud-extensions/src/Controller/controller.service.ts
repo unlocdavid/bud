@@ -74,7 +74,7 @@ class Controller {
     this.log = this.app.extensions.log
 
     this.meta = {
-      instance: this.app.name,
+      instance: this.app.ident,
       registered: false,
       booted: false,
     }
@@ -273,7 +273,7 @@ class Controller {
     Object.entries(classMap).forEach(([k, v]) => {
       this.log(
         'success',
-        `${this.app.name}.${k}`,
+        `${this.app.ident}.${k}`,
         'registered by',
         this._module.name,
       )

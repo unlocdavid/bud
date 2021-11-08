@@ -1,5 +1,3 @@
-import container from './services.module'
-
+export {module} from './services.module'
 export {services} from './services.service'
-
-export {container}
+export type {Services} from './services.interface'

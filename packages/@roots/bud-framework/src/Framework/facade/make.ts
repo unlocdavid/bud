@@ -22,8 +22,8 @@ export interface make {
 function handleChildNestingError(this: Framework) {
   !this.isRoot &&
     this.error(
-      `\`${this.name}\` is a child compiler but you tried to call make from it. Try \`${this.name}.parent.make\` instead.`,
-      `${this.name}.make`,
+      `\`${this.ident}\` is a child compiler but you tried to call make from it. Try \`${this.ident}.parent.make\` instead.`,
+      `${this.ident}.make`,
     )
 }
 
@@ -52,16 +52,19 @@ export async function make(
   handleChildNestingError.bind(ctx)()
   ctx.logger.instance.fav(`new instance:`, name)
 
-  const instance = container.resolve<Framework>('bud')
-  instance.name = name
-  instance.root = ctx
-  instance.mode = ctx.mode
+  const bud = container
+    .createChildContainer()
+    .resolve<Framework>('bud')
 
-  await instance.lifecycle()
+  bud.ident = name
+  bud.root = ctx
+  bud.mode = ctx.mode
 
-  if (tap) await tap(instance)
+  await bud.lifecycle()
 
-  ctx.children.set(name, instance)
+  if (tap) await tap(bud)
+
+  ctx.children.set(name, bud)
 
   return ctx
 }

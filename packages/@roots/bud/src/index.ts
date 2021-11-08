@@ -50,14 +50,10 @@
  * @packageDocumentation @betaDocumentation
  */
 
-import './interface'
+import './bootstrap'
 
-export * from './services'
-
-export * from './settings'
-
-export * from './Bud'
-
+export {Bud} from './bud'
+export {Settings} from './settings'
 export {factory} from './factory'
 
 export {Framework} from '@roots/bud-framework'

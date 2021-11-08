@@ -1,17 +1,15 @@
+import {Configuration} from '@roots/bud-framework'
+import {Container} from '@roots/container'
 import {cpus} from 'os'
+
+import {Settings} from './settings.interface'
 
 /**
  * {@inheritDoc @roots/bud-framework#Configuration}
  *
- * @public @config
+ * @public
  */
-export const SettingsService = {
-  /**
-   * {@inheritDoc @roots/bud-framework#Configuration.name}
-   * @public
-   */
-  name: 'bud',
-
+export const service: Settings = new Container<Configuration>({
   /**
    * Is webpack caching enabled?
    *
@@ -249,4 +247,4 @@ export const SettingsService = {
     maxWidth: 140,
     maxHeight: 999,
   },
-}
+})

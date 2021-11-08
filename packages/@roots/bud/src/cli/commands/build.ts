@@ -2,7 +2,7 @@ import '../../'
 
 import {flags} from '@oclif/command'
 
-import {Bud} from '../../Bud'
+import {Bud} from '../../'
 import {Command} from '../Command'
 import {Runner} from '../Runner'
 

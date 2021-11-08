@@ -67,7 +67,6 @@ export class Container<I = any> {
   @bind
   public setStore(repository: Repository): this {
     this.repository = repository
-
     return this
   }
 

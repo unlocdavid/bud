@@ -32,7 +32,7 @@ import {Logger} from './Logger'
  * @public @core @container
  */
 export abstract class Service<
-  Repository = Record<string, any>,
+  Repository = any,
 > extends Bootstrapper<Repository> {
   /**
    * Service scoped logger

@@ -37,7 +37,7 @@ export function bindMethod<FunctionMap = GenericFunctionMap>(
   Object.entries(properties).map(([name, value]) => {
     ctx[name] = value.bind(this)
     if (isFunction(ctx[name])) {
-      ctx.success(`${name} bound to ${ctx.name}`)
+      ctx.success(`${name} bound to ${ctx.ident}`)
     }
   })
 

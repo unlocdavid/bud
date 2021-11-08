@@ -119,17 +119,17 @@ export async function initializeStore(this: Project.Interface) {
 
   this.app
     .when(
-      this.has(`manifest.${this.app.name}.inject`),
+      this.has(`manifest.${this.app.ident}.inject`),
       ({store}) =>
         store.set(
           'inject',
-          this.get(`manifest.${this.app.name}.inject`),
+          this.get(`manifest.${this.app.ident}.inject`),
         ),
     )
-    .when(this.has(`manifest.${this.app.name}.paths`), () =>
+    .when(this.has(`manifest.${this.app.ident}.paths`), () =>
       this.app.store.merge(
         'location',
-        this.get(`manifest.${this.app.name}.paths`),
+        this.get(`manifest.${this.app.ident}.paths`),
       ),
     )
 

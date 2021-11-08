@@ -1,8 +1,11 @@
 import {container} from '@roots/bud-support'
-import {Container} from '@roots/container'
 
+import {Services} from '.'
 import {services} from './services.service'
 
-export default container.register<Container>('bud.services', {
-  useValue: services,
-})
+export const module = container.register<Services>(
+  'bud.services',
+  {
+    useValue: services,
+  },
+)

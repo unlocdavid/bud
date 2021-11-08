@@ -1,7 +1,7 @@
 import {flags} from '@oclif/command'
 import type Parser from '@oclif/parser'
 
-import {Bud} from '../../Bud'
+import {Bud} from '../../'
 import {Command} from '../Command'
 import {Runner} from '../Runner'
 

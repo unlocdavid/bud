@@ -105,8 +105,8 @@ export class Logger {
     this.app.isRoot && scope.push('root')
 
     !this.app.isRoot &&
-      this.app.name &&
-      scope.push(this.app.name)
+      this.app.ident &&
+      scope.push(this.app.ident)
 
     return scope
   }

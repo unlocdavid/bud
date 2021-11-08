@@ -70,7 +70,7 @@ export class Project
         directory: this.app.path('storage'),
         file: this.app.path(
           'storage',
-          `${this.app.name}.profile.json`,
+          `${this.app.ident}.profile.json`,
         ),
       },
     })
@@ -88,29 +88,29 @@ export class Project
         {
           key: 'configs.dynamic.global',
           searchStrings: [
-            `${this.app.name}.config.ts`,
-            `${this.app.name}.config.js`,
+            `${this.app.ident}.config.ts`,
+            `${this.app.ident}.config.js`,
           ],
         },
         {
           key: `configs.dynamic.conditional`,
           searchStrings: [
-            `${this.app.name}.${this.app.mode}.config.ts`,
-            `${this.app.name}.${this.app.mode}.config.js`,
+            `${this.app.ident}.${this.app.mode}.config.ts`,
+            `${this.app.ident}.${this.app.mode}.config.js`,
           ],
         },
         {
           key: 'configs.json.global',
           searchStrings: [
-            `${this.app.name}.config.json`,
-            `${this.app.name}.config.yml`,
+            `${this.app.ident}.config.json`,
+            `${this.app.ident}.config.yml`,
           ],
         },
         {
           key: 'configs.json.conditional',
           searchStrings: [
-            `${this.app.name}.${this.app.mode}.config.json`,
-            `${this.app.name}.${this.app.mode}.config.yml`,
+            `${this.app.ident}.${this.app.mode}.config.json`,
+            `${this.app.ident}.${this.app.mode}.config.yml`,
           ],
         },
       ].map(this.searchConfig),

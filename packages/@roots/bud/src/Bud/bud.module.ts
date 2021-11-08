@@ -1,5 +1,7 @@
-import {container} from '@roots/bud-support'
+import {container} from 'tsyringe'
 
 import {Bud} from './bud.service'
 
-export default container.register<Bud>('bud', {useClass: Bud})
+export const module = container.register<Bud>('bud', {
+  useClass: Bud,
+})

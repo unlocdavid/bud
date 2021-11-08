@@ -1,6 +1,6 @@
 import {isFunction} from 'lodash'
 
-import {Bud} from '../..'
+import {Bud} from '../../bud'
 
 export const config = async (app: Bud) => {
   if (app.project.isFunction('configs.dynamic.global.config')) {
@@ -9,7 +9,7 @@ export const config = async (app: Bud) => {
     )
     if (isFunction(config)) {
       app.info(
-        `Running ${app.name} global configuration callback`,
+        `Running ${app.ident} global configuration callback`,
       )
 
       await config(app)
@@ -24,7 +24,7 @@ export const config = async (app: Bud) => {
     )
     if (isFunction(config)) {
       app.info(
-        `Running ${app.name} ${app.mode} configuration callback`,
+        `Running ${app.ident} ${app.mode} configuration callback`,
       )
 
       await config(app)

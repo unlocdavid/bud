@@ -11,13 +11,6 @@ import {Service} from './Service'
  */
 export class Store<T = Configuration> extends Service<T> {
   /**
-   * Repository
-   *
-   * @public
-   */
-  public repository: Repository = {}
-
-  /**
    * {@inheritDoc @roots/container#Container.get}
    *
    * @override

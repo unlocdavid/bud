@@ -1,5 +1,5 @@
-import {Service} from '@roots/bud-framework'
-import {Container} from '@roots/container'
+import {Framework, Service} from '@roots/bud-framework'
+import {Container as Collection} from '@roots/container'
 
 import {Api} from './Api'
 import {Build} from './Build'
@@ -12,11 +12,11 @@ import {Extensions} from './Extensions'
 import {Hooks} from './Hooks'
 import {Project} from './Project'
 import {Server} from './Server'
+import {Services} from './services.interface'
 
-/**
- * @public
- */
-const repository = {
+export const services: Services = new Collection<
+  Record<string, new (app: Framework) => Service>
+>({
   api: Api,
   hooks: Hooks,
   project: Project,
@@ -28,8 +28,4 @@ const repository = {
   server: Server,
   dashboard: Dashboard,
   extensions: Extensions,
-}
-
-export const services: Container<Service> = new Container(
-  repository,
-) as unknown as Container<Service>
+})

@@ -1,4 +1,5 @@
 import {Api as Base} from '@roots/bud-api'
+import {Service} from '@roots/bud-framework'
 
 /**
  * API service class
@@ -9,4 +10,4 @@ import {Api as Base} from '@roots/bud-api'
  *
  * @public
  */
-export class Api extends Base {}
+export class Api extends Base implements Service {}

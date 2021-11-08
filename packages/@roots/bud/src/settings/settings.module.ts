@@ -1,10 +1,11 @@
-import {container} from '@roots/bud-support'
+import {Container} from '@roots/container'
+import {container} from 'tsyringe'
 
-import {SettingsService} from './settings.service'
+import {service} from './settings.service'
 
-export default container.register<typeof SettingsService>(
+export const module = container.register<Container>(
   'bud.settings',
   {
-    useValue: SettingsService,
+    useValue: service,
   },
 )

@@ -1,4 +1,6 @@
-import SettingsModule from './settings.module'
-import {SettingsService} from './settings.service'
+import {Settings} from './settings.interface'
+import {module} from './settings.module'
+import {service} from './settings.service'
 
-export {SettingsModule, SettingsService}
+export {module, service}
+export type {Settings}

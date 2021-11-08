@@ -1,7 +1,7 @@
 import {Configuration} from '@roots/bud-framework'
 import {bind} from '@roots/bud-support'
 
-import {Bud} from '../../Bud'
+import {Bud} from '../../'
 import {factory} from '../../factory'
 import * as dynamic from './dynamic.config'
 import * as flags from './flags.config'
