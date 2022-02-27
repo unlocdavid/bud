@@ -142,13 +142,6 @@ export type AtLeastOne<Type = unknown> = Type | Type[]
 export type Maybe<A extends any[], T> = T | Factory<A, T>
 
 /**
- * Hash of a given object type
- *
- * @public
- */
-export type Index<T = any> = {[key: string]: T}
-
-/**
  * Compilation mode
  *
  * @public
@@ -160,7 +153,8 @@ export type Mode = 'production' | 'development'
  *
  * @virtual @public
  */
-export interface Modules extends Partial<Index<Extension.Module>> {}
+export interface Modules
+  extends Partial<Record<string, Extension.Module>> {}
 
 /**
  * Registered plugins
@@ -168,21 +162,22 @@ export interface Modules extends Partial<Index<Extension.Module>> {}
  * @virtual @public
  */
 export interface Plugins
-  extends Partial<Index<Extension.CompilerPlugin>> {}
+  extends Partial<Record<string, Extension.CompilerPlugin>> {}
 
 /**
  * Registered loaders
  *
  * @virtual @public
  */
-export interface Loaders extends Partial<Index<Loader.Interface>> {}
+export interface Loaders
+  extends Partial<Record<string, Loader.Interface>> {}
 
 /**
  * Registered items
  *
  * @virtual @public
  */
-export interface Items extends Partial<Index<Item.Interface>> {}
+export interface Items extends Partial<Record<string, Item.Interface>> {}
 
 /**
  * Registered rules
